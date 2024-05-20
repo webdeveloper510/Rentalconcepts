@@ -1,0 +1,12 @@
+#btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    }
+
+#form-card{
+	margin-left: 10px;
+	margin-right: 10px;
+}

@@ -1,0 +1,918 @@
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    1
+TIME CARD FOR EMPLOYEE #:     105 SAL            PERNICE            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  REGIONAL MGR
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+
+
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                                                00:00
+
+       TOTAL THIS PAGE:     :00 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     105 SAL            PERNICE            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  REGIONAL MGR
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+
+
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          00:00
+
+       TOTAL THIS PAGE:     :00 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:     :00 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     108 SCOTT          BAUMANN            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SHOP TECH
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:30 AM       IN 08:30 AM                         IN 08:30 AM       IN 08:30 AM       IN 08:30 AM
+                  OUT 12:00 PM      OUT 12:00 PM                        OUT 12:00 PM      OUT 10:59 AM      OUT 12:00 PM
+                   IN 12:30 PM       IN 12:30 PM                         IN 12:30 PM                         IN 12:30 PM
+                  OUT 05:32 PM      OUT 05:02 PM                        OUT 04:43 PM                        OUT 04:13 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:32             08:02                               07:43             02:29             07:13
+TOTAL HOURS ALREADY PAID  16:34
+       TOTAL THIS PAGE:   17:25 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    2
+TIME CARD FOR EMPLOYEE #:     108 SCOTT          BAUMANN            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SHOP TECH
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:30 AM       IN 08:30 AM       IN 08:30 AM       IN 08:30 AM       IN 08:30 AM
+                                    OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM
+                                     IN 12:30 PM       IN 12:30 PM       IN 12:30 PM       IN 12:30 PM       IN 12:30 PM
+                                    OUT 05:41 PM      OUT 05:26 PM      OUT 05:20 PM      OUT 04:58 PM      OUT 04:19 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        08:41             08:26             08:20             07:58             07:19
+
+       TOTAL THIS PAGE:   40:00 REGULAR HOURS   000:44 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     108 SCOTT          BAUMANN            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SHOP TECH
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:30 AM       IN 08:30 AM       IN 08:30 AM       IN 08:30 AM
+                  OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM
+                   IN 12:30 PM       IN 12:30 PM       IN 12:30 PM       IN 12:30 PM
+                  OUT 05:26 PM      OUT 05:22 PM      OUT 05:05 PM      OUT 05:21 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:26             08:22             08:05             08:21
+
+       TOTAL THIS PAGE:   33:14 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   90:39 REGULAR HOURS   000:44 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     119 ALEXANDER      KJELLANDER         FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                       IN 09:12 AM       IN 08:45 AM       IN 08:32 AM       IN 08:43 AM
+                                                      OUT 12:00 PM      OUT 01:29 PM      OUT 12:00 PM      OUT 12:00 PM
+                                                       IN 12:30 PM       IN 02:01 PM       IN 12:30 PM       IN 12:30 PM
+                                                      OUT 05:39 PM      OUT 05:41 PM      OUT 06:07 PM      OUT 04:58 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          07:57             08:24             09:05             07:45
+TOTAL HOURS ALREADY PAID   7:57
+       TOTAL THIS PAGE:   25:14 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    3
+TIME CARD FOR EMPLOYEE #:     119 ALEXANDER      KJELLANDER         FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                       IN 08:46 AM       IN 09:00 AM       IN 08:48 AM       IN 10:20 AM
+                                                      OUT 10:00 AM      OUT 01:30 PM      OUT 01:35 PM      OUT 02:31 PM
+                                                       IN 10:30 AM       IN 02:04 PM       IN 02:18 PM       IN 03:08 PM
+                                                      OUT 03:36 PM      OUT 06:05 PM      OUT 05:20 PM      OUT 05:02 PM
+                                                       IN 04:17 PM
+                                                      OUT 06:00 PM
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          08:03             08:31             07:49             06:05
+
+       TOTAL THIS PAGE:   30:28 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     119 ALEXANDER      KJELLANDER         FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:41 AM                         IN 08:47 AM       IN 09:08 AM
+                  OUT 12:01 PM                        OUT 12:00 PM      OUT 02:31 PM
+                   IN 12:31 PM                         IN 12:30 PM       IN 03:04 PM
+                  OUT 05:59 PM                        OUT 05:55 PM      OUT 05:27 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:48                               08:38             07:46
+
+       TOTAL THIS PAGE:   25:12 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   80:54 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     224 BRIAN          SIMINGTON          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:30 AM       IN 09:07 AM       IN 08:34 AM                         IN 08:31 AM       IN 08:30 AM
+                  OUT 04:15 PM      OUT 12:00 PM      OUT 12:00 PM                        OUT 12:00 PM      OUT 11:47 AM
+                                     IN 12:30 PM       IN 12:30 PM                         IN 12:30 PM
+                                    OUT 06:01 PM      OUT 06:04 PM                        OUT 06:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      07:45             08:24             09:00                               08:59             03:17
+TOTAL HOURS ALREADY PAID  25:09
+       TOTAL THIS PAGE:   12:16 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    4
+TIME CARD FOR EMPLOYEE #:     224 BRIAN          SIMINGTON          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:59 AM                         IN 09:03 AM
+                                    OUT 05:16 PM                        OUT 12:51 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        08:17                               03:48
+
+       TOTAL THIS PAGE:   12:05 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     224 BRIAN          SIMINGTON          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  ACCT MANAGER
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 03:51 PM
+                  OUT 04:50 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      00:59
+
+       TOTAL THIS PAGE:     :59 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   25:20 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     248 MONTELL        WALKER             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                           IN 08:32 AM
+                                                                                          OUT 06:22 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                              09:50             00:00
+
+       TOTAL THIS PAGE:    9:50 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    5
+TIME CARD FOR EMPLOYEE #:     248 MONTELL        WALKER             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  MANAGER
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                                         IN 08:39 AM
+                                                                        OUT 06:05 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        00:00                               09:26             00:00
+
+       TOTAL THIS PAGE:    9:26 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     248 MONTELL        WALKER             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  MANAGER
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:26 AM       IN 08:33 AM                         IN 08:28 AM
+                  OUT 06:03 PM      OUT 06:00 PM                        OUT 06:01 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      09:37             09:27                               09:33
+
+       TOTAL THIS PAGE:   28:37 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   47:53 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     280 STEPHON        TAYLOR             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SALES
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:38 AM                         IN 08:33 AM       IN 08:30 AM       IN 08:32 AM       IN 08:35 AM
+                  OUT 02:00 PM                        OUT 04:12 PM      OUT 03:00 PM      OUT 03:00 PM      OUT 02:01 PM
+                   IN 02:30 PM                         IN 04:42 PM       IN 03:30 PM       IN 03:38 PM
+                  OUT 06:03 PM                        OUT 06:02 PM      OUT 06:00 PM      OUT 06:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:55                               08:59             09:00             08:50             05:26
+TOTAL HOURS ALREADY PAID  17:54
+       TOTAL THIS PAGE:   22:06 REGULAR HOURS   001:10 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    6
+TIME CARD FOR EMPLOYEE #:     280 STEPHON        TAYLOR             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SALES
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:39 AM       IN 08:42 AM       IN 08:35 AM       IN 08:47 AM       IN 08:44 AM
+                                    OUT 02:00 PM      OUT 04:29 PM      OUT 12:00 PM      OUT 01:42 PM      OUT 01:50 PM
+                                     IN 02:32 PM       IN 05:12 PM       IN 12:30 PM       IN 02:16 PM       IN 02:20 PM
+                                    OUT 06:07 PM      OUT 06:06 PM      OUT 02:03 PM      OUT 06:08 PM      OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        08:56             08:41             04:58             08:47             07:46
+
+       TOTAL THIS PAGE:   39:08 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     280 STEPHON        TAYLOR             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SALES
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:46 AM                         IN 08:32 AM       IN 08:35 AM
+                  OUT 02:02 PM                        OUT 03:30 PM      OUT 01:21 PM
+                   IN 02:37 PM                         IN 04:00 PM       IN 01:58 PM
+                  OUT 06:30 PM                        OUT 06:01 PM      OUT 06:19 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      09:09                               08:59             09:07
+
+       TOTAL THIS PAGE:   27:15 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   88:29 REGULAR HOURS   001:10 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     286 OSCAR          TOBAR              FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SHOP TECH
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+
+
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                                                00:00
+
+       TOTAL THIS PAGE:     :00 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    7
+TIME CARD FOR EMPLOYEE #:     286 OSCAR          TOBAR              FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-RAYTOWN                                                                     DEPT:  SHOP TECH
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                       IN 08:30 AM       IN 08:30 AM
+                                                      OUT 12:00 PM      OUT 12:00 PM
+                                                       IN 12:30 PM       IN 12:30 PM
+                                                      OUT 06:00 PM      OUT 06:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          09:00             09:00
+
+       TOTAL THIS PAGE:   18:00 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   18:00 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+
+
+
+
+
+                   ------------------------------------------------------------------------------
+                   -- REPORT DATE:  9/20/22                              REPORT TIME: 11:09:41 --
+                   ------------------------------------------------------------------------------
+                   --                                                                          --
+                   -- STORE TOTALS            REGULAR HOURS      OVERTIME HOURS    TOTAL HOURS --
+                   --                                                                          --
+                   -- HOURS:MINUTES               351:15                1:54           353:09  --
+                   --                                                                          --
+                   -- HUNDREDTHS CONVERSION       351.25                1.90           353.15  --
+                   --                                                                          --
+                   ------------------------------------------------------------------------------
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     182 MICHAEL        CASTENADA          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SALES
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 10:40 AM       IN 08:56 AM                         IN 11:04 AM       IN 11:08 AM       IN 09:40 AM
+                  OUT 06:00 PM      OUT 01:59 PM                        OUT 05:16 PM      OUT 05:25 PM      OUT 04:16 PM
+                                     IN 02:24 PM
+                                    OUT 05:55 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      07:20             08:34                               06:12             06:17             06:36
+TOTAL HOURS ALREADY PAID  15:54
+       TOTAL THIS PAGE:   19:05 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    8
+TIME CARD FOR EMPLOYEE #:     182 MICHAEL        CASTENADA          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SALES
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 09:50 AM                         IN 11:16 AM       IN 11:00 AM       IN 11:15 AM       IN 11:16 AM
+                  OUT 05:15 PM                        OUT 05:30 PM      OUT 06:00 PM      OUT 05:45 PM      OUT 05:08 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      07:25                               06:14             07:00             06:30             05:52
+
+       TOTAL THIS PAGE:   33:01 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     182 MICHAEL        CASTENADA          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SALES
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                       IN 10:15 AM       IN 10:48 AM
+                                                      OUT 05:03 PM      OUT 05:30 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          06:48             06:42
+
+       TOTAL THIS PAGE:   13:30 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   65:36 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     201 GEORGE         WALKER             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  ACCT MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+
+
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                          00:00
+
+       TOTAL THIS PAGE:     :00 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:     :00 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:    9
+TIME CARD FOR EMPLOYEE #:     235 THOMAS         JOHNSON            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  ACCT MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 02:12 PM                                           IN 08:30 AM       IN 08:30 AM       IN 08:40 AM
+                  OUT 02:13 PM                                          OUT 12:30 PM      OUT 12:00 PM      OUT 02:02 PM
+                   IN 02:49 PM                                           IN 01:03 PM       IN 12:30 PM       IN 02:32 PM
+                  OUT 06:07 PM                                          OUT 06:00 PM      OUT 06:18 PM      OUT 05:04 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      03:19                                                 08:57             09:18             07:54
+TOTAL HOURS ALREADY PAID   3:19
+       TOTAL THIS PAGE:   26:09 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     235 THOMAS         JOHNSON            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  ACCT MANAGER
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:30 AM       IN 08:33 AM       IN 09:02 AM       IN 08:30 AM       IN 08:43 AM
+                                    OUT 12:00 PM      OUT 02:05 PM      OUT 01:29 PM      OUT 12:00 PM      OUT 01:30 PM
+                                     IN 12:30 PM       IN 02:43 PM       IN 02:00 PM       IN 12:30 PM       IN 02:00 PM
+                                    OUT 06:15 PM      OUT 06:07 PM      OUT 06:01 PM      OUT 06:00 PM      OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        09:15             08:56             08:28             09:00             07:47
+
+       TOTAL THIS PAGE:   40:00 REGULAR HOURS   003:26 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     235 THOMAS         JOHNSON            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  ACCT MANAGER
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 09:00 AM                         IN 08:16 AM       IN 08:46 AM
+                  OUT 12:40 PM                        OUT 01:00 PM      OUT 03:10 PM
+                   IN 01:32 PM                         IN 01:37 PM       IN 03:39 PM
+                  OUT 05:05 PM                        OUT 05:52 PM      OUT 06:08 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      07:13                               08:59             08:53
+
+       TOTAL THIS PAGE:   25:05 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   91:14 REGULAR HOURS   003:26 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   10
+TIME CARD FOR EMPLOYEE #:     287 JONATHAN       MITCHELL           FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SHOP TECH
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+
+
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                                                00:00
+
+       TOTAL THIS PAGE:     :00 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     287 JONATHAN       MITCHELL           FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SHOP TECH
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                                             IN 08:30 AM
+                                                                                                            OUT 01:17 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                                                                04:47
+
+       TOTAL THIS PAGE:    4:47 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     287 JONATHAN       MITCHELL           FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-GLADSTONE                                                                   DEPT:  SHOP TECH
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 01:47 PM       IN 08:33 AM       IN 08:30 AM
+                                    OUT 05:24 PM      OUT 12:23 PM      OUT 11:44 AM
+                                                       IN 12:47 PM       IN 12:11 PM
+                                                      OUT 02:56 PM      OUT 05:22 PM
+                                                       IN 03:07 PM
+                                                      OUT 05:01 PM
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        03:37             07:53             08:25
+
+       TOTAL THIS PAGE:   19:55 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   24:42 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   11
+
+
+
+
+
+                   ------------------------------------------------------------------------------
+                   -- REPORT DATE:  9/20/22                              REPORT TIME: 11:09:41 --
+                   ------------------------------------------------------------------------------
+                   --                                                                          --
+                   -- STORE TOTALS            REGULAR HOURS      OVERTIME HOURS    TOTAL HOURS --
+                   --                                                                          --
+                   -- HOURS:MINUTES               181:32                3:26           184:58  --
+                   --                                                                          --
+                   -- HUNDREDTHS CONVERSION       181.53                3.43           184.97  --
+                   --                                                                          --
+                   ------------------------------------------------------------------------------
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     105 SAL            PERNICE            FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  REGIONAL MGR
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                                                                         IN 08:15 AM       IN 08:15 AM
+                                                                        OUT 12:00 PM      OUT 12:05 PM
+                                                                         IN 12:12 PM       IN 12:18 PM
+                                                                        OUT 06:47 PM      OUT 06:17 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                                                            10:20             09:49
+
+       TOTAL THIS PAGE:   20:09 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   20:09 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     245 DYLAN          HINES              FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SALES
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:29 AM                                           IN 08:28 AM       IN 08:28 AM       IN 08:31 AM
+                  OUT 01:00 PM                                          OUT 12:00 PM      OUT 01:04 PM      OUT 11:28 AM
+                   IN 01:32 PM                                                                               IN 11:59 AM
+                  OUT 06:05 PM                                                                              OUT 05:04 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      09:04                                                 03:32             04:36             08:02
+TOTAL HOURS ALREADY PAID   9:04
+       TOTAL THIS PAGE:   16:10 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   12
+TIME CARD FOR EMPLOYEE #:     245 DYLAN          HINES              FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SALES
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:30 AM       IN 08:30 AM       IN 08:33 AM       IN 08:30 AM       IN 08:30 AM
+                                    OUT 01:07 PM      OUT 11:04 AM      OUT 12:15 PM      OUT 12:12 PM      OUT 11:55 AM
+                                     IN 01:35 PM       IN 11:35 AM       IN 12:46 PM       IN 12:46 PM
+                                    OUT 06:03 PM      OUT 06:17 PM      OUT 06:05 PM      OUT 06:02 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        09:05             09:16             09:01             08:58             03:25
+
+       TOTAL THIS PAGE:   39:45 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     245 DYLAN          HINES              FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SALES
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 12:40 PM
+                  OUT 06:03 PM
+
+
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      05:23
+
+       TOTAL THIS PAGE:    5:23 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   61:18 REGULAR HOURS   000:00 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     246 AMBER          ZIMMERMAN          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  ACCT MANAGER
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:38 AM       IN 08:44 AM                         IN 08:35 AM       IN 08:44 AM       IN 08:42 AM
+                  OUT 12:00 PM      OUT 12:00 PM                        OUT 12:00 PM      OUT 02:12 PM      OUT 12:00 PM
+                   IN 12:30 PM       IN 12:30 PM                         IN 12:30 PM       IN 03:31 PM       IN 12:03 PM
+                  OUT 06:04 PM      OUT 06:09 PM                        OUT 06:07 PM      OUT 06:05 PM      OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:56             08:55                               09:02             08:02             08:15
+TOTAL HOURS ALREADY PAID  17:51
+       TOTAL THIS PAGE:   22:09 REGULAR HOURS   003:10 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   13
+TIME CARD FOR EMPLOYEE #:     246 AMBER          ZIMMERMAN          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  ACCT MANAGER
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:37 AM       IN 08:40 AM       IN 08:33 AM       IN 08:43 AM       IN 08:37 AM
+                                    OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM      OUT 01:57 PM      OUT 12:00 PM
+                                     IN 12:30 PM       IN 12:30 PM       IN 12:30 PM       IN 03:05 PM       IN 12:30 PM
+                                    OUT 06:06 PM      OUT 06:05 PM      OUT 06:02 PM      OUT 06:06 PM      OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        08:59             08:55             08:59             08:15             07:53
+
+       TOTAL THIS PAGE:   40:00 REGULAR HOURS   003:01 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     246 AMBER          ZIMMERMAN          FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  ACCT MANAGER
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:52 AM       IN 08:54 AM                         IN 08:37 AM
+                  OUT 12:00 PM      OUT 12:00 PM                        OUT 12:00 PM
+                   IN 12:30 PM       IN 12:30 PM                         IN 12:30 PM
+                  OUT 06:02 PM      OUT 06:03 PM                        OUT 06:02 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:40             08:39                               08:55
+
+       TOTAL THIS PAGE:   26:14 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   88:23 REGULAR HOURS   006:11 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     281 TAJUDEEN       OSAGIE             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SHOP TECH
+    8/28/22           8/29/22           8/30/22           8/31/22           9/01/22           9/02/22           9/03/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:39 AM       IN 08:43 AM                         IN 08:39 AM       IN 08:39 AM       IN 08:36 AM
+                  OUT 01:11 PM      OUT 12:00 PM                        OUT 12:03 PM      OUT 12:42 PM      OUT 12:12 PM
+                                     IN 12:30 PM                         IN 12:30 PM       IN 01:12 PM       IN 12:47 PM
+                                    OUT 06:01 PM                        OUT 06:10 PM      OUT 06:04 PM      OUT 05:02 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      04:32             08:48                               09:04             08:55             07:51
+TOTAL HOURS ALREADY PAID  13:20
+       TOTAL THIS PAGE:   25:50 REGULAR HOURS   000:00 OVERTIME HOURS
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   14
+TIME CARD FOR EMPLOYEE #:     281 TAJUDEEN       OSAGIE             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SHOP TECH
+    9/04/22           9/05/22           9/06/22           9/07/22           9/08/22           9/09/22           9/10/22
+   --------          --------          --------          --------          --------          --------          --------
+                                     IN 08:38 AM       IN 08:37 AM       IN 08:40 AM       IN 08:30 AM       IN 08:30 AM
+                                    OUT 12:00 PM      OUT 10:34 AM      OUT 12:00 PM      OUT 12:00 PM      OUT 12:00 PM
+                                     IN 12:30 PM       IN 11:04 AM       IN 12:30 PM       IN 12:30 PM       IN 12:30 PM
+                                    OUT 05:54 PM      OUT 06:18 PM      OUT 06:06 PM      OUT 06:09 PM      OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                                        08:46             09:11             08:56             09:09             08:00
+
+       TOTAL THIS PAGE:   40:00 REGULAR HOURS   004:02 OVERTIME HOURS
+
+
+
+
+
+TIME CARD FOR EMPLOYEE #:     281 TAJUDEEN       OSAGIE             FOR:   9/01/22   TO:   9/15/22
+LOCATION: RNR-ST JOSEPH                                                                   DEPT:  SHOP TECH
+    9/11/22           9/12/22           9/13/22           9/14/22           9/15/22           9/16/22           9/17/22
+   --------          --------          --------          --------          --------          --------          --------
+                   IN 08:30 AM       IN 08:39 AM                         IN 08:56 AM
+                  OUT 03:00 PM      OUT 12:00 PM                        OUT 12:42 PM
+                   IN 03:33 PM       IN 12:30 PM                         IN 01:12 PM
+                  OUT 06:00 PM      OUT 06:02 PM                        OUT 05:00 PM
+
+
+
+
+   --------          --------          --------          --------          --------          --------          --------
+                      08:57             08:53                               07:34
+
+       TOTAL THIS PAGE:   25:24 REGULAR HOURS   000:00 OVERTIME HOURS
+     TOTAL THIS REPORT:   91:14 REGULAR HOURS   004:02 OVERTIME HOURS     PLEASE INITIAL HERE____________
+
+
+
+
+
+
+
+
+
+                   ------------------------------------------------------------------------------
+                   -- REPORT DATE:  9/20/22                              REPORT TIME: 11:09:41 --
+                   ------------------------------------------------------------------------------
+                   --                                                                          --
+                   -- STORE TOTALS            REGULAR HOURS      OVERTIME HOURS    TOTAL HOURS --
+                   --                                                                          --
+                   -- HOURS:MINUTES               261:04               10:13           271:17  --
+                   --                                                                          --
+                   -- HUNDREDTHS CONVERSION       261.07               10.22           271.28  --
+                   --                                                                          --
+                   ------------------------------------------------------------------------------
+
+
+
+
+
+TIMECARD                                         TIME CARD REPORT                                            PAGE:   15
+
+
+
+
+
+                   ------------------------------------------------------------------------------
+                   -- REPORT DATE:  9/20/22                              REPORT TIME: 11:09:41 --
+                   ------------------------------------------------------------------------------
+                   --                                                                          --
+                   -- REPORT TOTALS           REGULAR HOURS      OVERTIME HOURS    TOTAL HOURS --
+                   --                                                                          --
+                   -- HOURS:MINUTES               793:51               15:33           809:24  --
+                   --                                                                          --
+                   -- HUNDREDTHS CONVERSION       793.85               15.55           809.40  --
+                   --                                                                          --
+                   ------------------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,39 @@
+[20-Jun-2022 05:05:42 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:334
+Stack trace:
+#0 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(625): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(606): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(537): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(443): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(363): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(427): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(115): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/a1ozv8k8f7jm/public_html/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 334
+[20-Jun-2022 05:05:48 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:334
+Stack trace:
+#0 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(625): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(606): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(537): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(443): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(363): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(427): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(115): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/a1ozv8k8f7jm/public_html/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 334
+[20-Jun-2022 05:05:48 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:334
+Stack trace:
+#0 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(625): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(606): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(537): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(443): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(363): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(427): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(115): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/a1ozv8k8f7jm/public_html/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/a1ozv8k8f7jm/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 334

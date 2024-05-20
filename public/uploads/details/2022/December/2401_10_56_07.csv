@@ -1,0 +1,459 @@
+,,,,,,,,,Type,Date,Num,Name,Memo,Class,Clr,Split,Debit,Credit,Balance
+,Ordinary Income/Expense,,,,,,,,,,,,,,,,,,
+,,,Income,,,,,,,,,,,,,,,,
+,,,,4000-00 · Rental Income,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,-SPLIT-,,"105,681.75","105,681.75"
+,,,,Total 4000-00 · Rental Income,,,,,,,,,,,,,0.00,"105,681.75","105,681.75"
+,,,,4100-00 · Cash Sales,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"7,444.13","7,444.13"
+,,,,Total 4100-00 · Cash Sales,,,,,,,,,,,,,0.00,"7,444.13","7,444.13"
+,,,,4105-00 · Early Purchase Option,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"15,004.92","15,004.92"
+,,,,Total 4105-00 · Early Purchase Option,,,,,,,,,,,,,0.00,"15,004.92","15,004.92"
+,,,,4200-00 · Roll Pro,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"9,859.12","9,859.12"
+,,,,Total 4200-00 · Roll Pro,,,,,,,,,,,,,0.00,"9,859.12","9,859.12"
+,,,,4205-00 · Collection Fee - In-House,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,,0.00
+,,,,Total 4205-00 · Collection Fee - In-House,,,,,,,,,,,,,0.00,0.00,0.00
+,,,,4210-00 · Reinstatement Fees,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"6,688.61","6,688.61"
+,,,,Total 4210-00 · Reinstatement Fees,,,,,,,,,,,,,0.00,"6,688.61","6,688.61"
+,,,,4214-00 · Other Fees - Alignments,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"6,630.08","6,630.08"
+,,,,Total 4214-00 · Other Fees - Alignments,,,,,,,,,,,,,0.00,"6,630.08","6,630.08"
+,,,,4215-00 · One Time Fees,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"1,229.41","1,229.41"
+,,,,Total 4215-00 · One Time Fees,,,,,,,,,,,,,0.00,"1,229.41","1,229.41"
+,,,,4225-00 · NSF Check Fees,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,,0.00
+,,,,Total 4225-00 · NSF Check Fees,,,,,,,,,,,,,0.00,0.00,0.00
+,,,,4230-00 · Other Miscellaneous Income,,,,,,,,,,,,,,,
+,,,,,,,,,Deposit,11/04/2022,92943,Benefit Marketing Solutions,RH-C BAKER #1122123,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,74.49,74.49
+,,,,,,,,,Deposit,11/04/2022,92943,Benefit Marketing Solutions,RH-A JOHNSON #1088166,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,131.00,205.49
+,,,,,,,,,Deposit,11/08/2022,93029,Benefit Marketing Solutions,RH-A  ADROW #116514,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,95.00,300.49
+,,,,,,,,,Deposit,11/08/2022,93130,Benefit Marketing Solutions,RH-R GOLDMAN #1182995,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,122.00,422.49
+,,,,,,,,,Deposit,11/08/2022,93190,Benefit Marketing Solutions,RH-C BOND #1165193,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,104.00,526.49
+,,,,,,,,,Deposit,11/08/2022,93192,Benefit Marketing Solutions,RH-B GINN #1180652,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,142.00,668.49
+,,,,,,,,,Deposit,11/08/2022,93192,Benefit Marketing Solutions,RH-T GLOVER #1173036,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,93.00,761.49
+,,,,,,,,,Deposit,11/08/2022,93195,Benefit Marketing Solutions,RH-C REED #1202693,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,112.00,873.49
+,,,,,,,,,Deposit,11/21/2022,93466,Benefit Marketing Solutions,RH-K BAKER #1220872,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,184.00,"1,057.49"
+,,,,,,,,,Deposit,11/21/2022,93466,Benefit Marketing Solutions,RH-L BOOTH #1157839,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,142.00,"1,199.49"
+,,,,,,,,,Deposit,11/21/2022,93473,Benefit Marketing Solutions,RH-C WALKER #1218580,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,312.00,"1,511.49"
+,,,,,,,,,Deposit,11/21/2022,93473,Benefit Marketing Solutions,RH-M WILBOURN #1203615,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,83.56,"1,595.05"
+,,,,,,,,,Deposit,11/21/2022,93283,Benefit Marketing Solutions,RH-I MCHENRY #1215838,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,111.22,"1,706.27"
+,,,,,,,,,Deposit,11/21/2022,93283,Benefit Marketing Solutions,RH-B MYERS #1131696,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,89.00,"1,795.27"
+,,,,,,,,,Deposit,11/21/2022,93285,Benefit Marketing Solutions,RH-Y WATSON #1202114,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,139.00,"1,934.27"
+,,,,,,,,,Deposit,11/21/2022,93569,Benefit Marketing Solutions,RH-D LOWE #1210341,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,107.00,"2,041.27"
+,,,,,,,,,Deposit,11/21/2022,93570,Benefit Marketing Solutions,RH-S SMITH #1213468,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,300.00,"2,341.27"
+,,,,,,,,,Deposit,11/21/2022,93571,Benefit Marketing Solutions,RH-G YOUNG #1190284,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,106.00,"2,447.27"
+,,,,,,,,,Deposit,11/21/2022,93380,Benefit Marketing Solutions,RH-R BONAY #1108563,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,75.51,"2,522.78"
+,,,,,,,,,Deposit,11/21/2022,93382,Benefit Marketing Solutions,RH-C ROBERTS #1227793,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,92.00,"2,614.78"
+,,,,,,,,,Deposit,11/21/2022,93663,Benefit Marketing Solutions,RH-R JONES #1094587,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,184.00,"2,798.78"
+,,,,,,,,,Deposit,11/21/2022,93664,Benefit Marketing Solutions,RH-P SULLIVAN #1209692,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,168.00,"2,966.78"
+,,,,,,,,,Deposit,11/28/2022,93926,Benefit Marketing Solutions,RH-A LANGSTON #1196183,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,280.00,"3,246.78"
+,,,,,,,,,Deposit,11/28/2022,93927,Benefit Marketing Solutions,RH-G MCCALL #1190853,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,165.00,"3,411.78"
+,,,,Total 4230-00 · Other Miscellaneous Income,,,,,,,,,,,,,0.00,"3,411.78","3,411.78"
+,,,,4240-00 · Roll Safe,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,"3,246.78","3,246.78"
+,,,,Total 4240-00 · Roll Safe,,,,,,,,,,,,,0.00,"3,246.78","3,246.78"
+,,,,4250-00 · Chargebacks,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/21/2022,1116sweep,,chargeback,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,151.43,,-151.43
+,,,,Total 4250-00 · Chargebacks,,,,,,,,,,,,,151.43,0.00,-151.43
+,,,Total Income,,,,,,,,,,,,,,151.43,"159,196.58","159,045.15"
+,,,Cost of Goods Sold,,,,,,,,,,,,,,,,
+,,,,5000-00 · Depreciation - Inventory,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,DEPRECIATION EXPENSE,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"22,153.28",,"22,153.28"
+,,,,,,,,,General Journal,11/30/2022,COS1122,,DEPRECIATION EXPENSE,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"4,041.44",,"26,194.72"
+,,,,Total 5000-00 · Depreciation - Inventory,,,,,,,,,,,,,"26,194.72",0.00,"26,194.72"
+,,,,5100-00 · Charge Off Expense,,,,,,,,,,,,,,,
+,,,,,5101-00 · Paid Out & EPO Charge Offs,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,EPO BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"12,295.60",,"12,295.60"
+,,,,,Total 5101-00 · Paid Out & EPO Charge Offs,,,,,,,,,,,,"12,295.60",0.00,"12,295.60"
+,,,,,5102-00 · Cash Sale Charge Offs,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,SALES BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"4,963.12",,"4,963.12"
+,,,,,,,,,General Journal,11/30/2022,COS1122,,SALES BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,,540.00,"4,423.12"
+,,,,,Total 5102-00 · Cash Sale Charge Offs,,,,,,,,,,,,"4,963.12",540.00,"4,423.12"
+,,,,,5103-00 · Skip/Stolen Charge Offs,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,SKIP/STOLEN BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"3,774.88",,"3,774.88"
+,,,,,,,,,General Journal,11/30/2022,RECLASS WO,,To reclass write offs to the reserve.,Store List:01 Jacksonville,,2003-00 · PD Customer CO Suspense,,"3,774.88",0.00
+,,,,,Total 5103-00 · Skip/Stolen Charge Offs,,,,,,,,,,,,"3,774.88","3,774.88",0.00
+,,,,,5104-00 · Non-Repairable Charge Offs,,,,,,,,,,,,,,
+,,,,,,5104-01 · Insurance Charge Offs,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,LDWS BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,"3,061.00",,"3,061.00"
+,,,,,,Total 5104-01 · Insurance Charge Offs,,,,,,,,,,,"3,061.00",0.00,"3,061.00"
+,,,,,,5104-02 · Returned Damaged/Non-Repairable,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,COS1122,,CHARGEOFFS BV,Store List:01 Jacksonville,,1100-01 · Inventory - Jacksonville,632.22,,632.22
+,,,,,,Total 5104-02 · Returned Damaged/Non-Repairable,,,,,,,,,,,632.22,0.00,632.22
+,,,,,Total 5104-00 · Non-Repairable Charge Offs,,,,,,,,,,,,"3,693.22",0.00,"3,693.22"
+,,,,,5105-01 · Past Due Account Charge Off,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,MTD Reserve,,MTD Reserve Requirement,Store List:01 Jacksonville,,-SPLIT-,"1,223.49",,"1,223.49"
+,,,,,Total 5105-01 · Past Due Account Charge Off,,,,,,,,,,,,"1,223.49",0.00,"1,223.49"
+,,,,,5106-00 · Inventory Cost Adjustment,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/01/2022,S174464209,ATD Jacksonville,PO: B570682,Store List:01 Jacksonville,,2000-00 · Accounts Payable,16.49,,16.49
+,,,,,,,,,Credit,11/10/2022,45-C020610,Gateway Tire of Little Rock,Americus Rebate,Store List:01 Jacksonville,,2000-00 · Accounts Payable,,794.66,-778.17
+,,,,,,,,,Bill,11/16/2022,370814,Friend - Jacksonville,PO: B571022,Store List:01 Jacksonville,,2000-00 · Accounts Payable,21.35,,-756.82
+,,,,,,,,,Bill,11/16/2022,125296,Velocity Wheel New York,PO: 133334,Store List:01 Jacksonville,,2000-00 · Accounts Payable,100.00,,-656.82
+,,,,,,,,,Bill,11/18/2022,45-0332468,Gateway Tire of Little Rock,PO: 133453,Store List:01 Jacksonville,,2000-00 · Accounts Payable,26.64,,-630.18
+,,,,,,,,,Bill,11/23/2022,45-0333429,Gateway Tire of Little Rock,PO: 133647,Store List:01 Jacksonville,,2000-00 · Accounts Payable,1.44,,-628.74
+,,,,,,,,,Bill,11/28/2022,45-0333732,Gateway Tire of Little Rock,PO: 133741,Store List:01 Jacksonville,,2000-00 · Accounts Payable,1.12,,-627.62
+,,,,,Total 5106-00 · Inventory Cost Adjustment,,,,,,,,,,,,167.04,794.66,-627.62
+,,,,Total 5100-00 · Charge Off Expense,,,,,,,,,,,,,"26,117.35","5,109.54","21,007.81"
+,,,,5400-00 · Club Remittance,,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,RS-RNR-NOV-22,Benefit Marketing Solutions,MTD RENTAL CONCEPTS BENEFIT MARKETING ROLL SAFE,Store List:01 Jacksonville,,2000-00 · Accounts Payable,632.27,,632.27
+,,,,,,,,,Bill,11/30/2022,RP-RNR NOV-22,Benefit Marketing Solutions,MTD RENTAL CONCEPTS BENEFIT MARKETING ROLL PRO,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"1,772.67",,"2,404.94"
+,,,,Total 5400-00 · Club Remittance,,,,,,,,,,,,,"2,404.94",0.00,"2,404.94"
+,,,Total COGS,,,,,,,,,,,,,,"54,717.01","5,109.54","49,607.47"
+,,Gross Profit,,,,,,,,,,,,,,,"54,868.44","164,306.12","109,437.68"
+,,,Expense,,,,,,,,,,,,,,,,
+,,,,6001-00 · Selling Expense,,,,,,,,,,,,,,,
+,,,,,6490-00 · Advertising and Promotion,,,,,,,,,,,,,,
+,,,,,,6500-00 · Radio - Admin,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,22110014,EZ Spanish Media - KOLL La Zeta,KOLL,Store List:01 Jacksonville,,2000-00 · Accounts Payable,312.00,,312.00
+,,,,,,,,,Bill,11/30/2022,8819455140,iHeart Media,Geofencing - November,Store List:01 Jacksonville,,2000-00 · Accounts Payable,200.00,,512.00
+,,,,,,,,,Bill,11/30/2022,8819454509,iHeart Media - Little Rock,KSSN,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"1,440.00",,"1,952.00"
+,,,,,,,,,Bill,11/30/2022,BB3526186,Cumulus Broadcasting - Little Rock,KIPR,Store List:01 Jacksonville,,2000-00 · Accounts Payable,160.00,,"2,112.00"
+,,,,,,,,,Bill,11/30/2022,BB3526183,Cumulus Broadcasting - Little Rock,KIPR,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"1,384.00",,"3,496.00"
+,,,,,,,,,Bill,11/30/2022,BB3526185,Cumulus Broadcasting - Little Rock,KIPR,Store List:01 Jacksonville,,2000-00 · Accounts Payable,30.00,,"3,526.00"
+,,,,,,,,,Bill,11/30/2022,BB3526184,Cumulus Broadcasting - Little Rock,KPZK,Store List:01 Jacksonville,,2000-00 · Accounts Payable,250.00,,"3,776.00"
+,,,,,,,,,Bill,11/30/2022,7266,Fidel Esquivel,Voice Talent,Store List:01 Jacksonville,,2000-00 · Accounts Payable,16.67,,"3,792.67"
+,,,,,,,,,Bill,11/30/2022,8819394632,iHeart Media,IHRT-FM  Black Friday - November,Store List:01 Jacksonville,,2000-00 · Accounts Payable,161.00,,"3,953.67"
+,,,,,,Total 6500-00 · Radio - Admin,,,,,,,,,,,"3,953.67",0.00,"3,953.67"
+,,,,,,6551-00 · Internet/Online,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/24/2022,INV00814103,"Podium Corporation, Inc",ACCT A00063893,Store List:01 Jacksonville,,2000-00 · Accounts Payable,135.00,,135.00
+,,,,,,,,,General Journal,11/30/2022,Digital1122,,Google -PPC Digital Ad Campaign,Store List:01 Jacksonville,,2000-99 · Suspense,"2,068.97",,"2,203.97"
+,,,,,,,,,General Journal,11/30/2022,Digital1122,,Facebook Digital AD Campaign,Store List:01 Jacksonville,,2000-99 · Suspense,324.53,,"2,528.50"
+,,,,,,,,,General Journal,11/30/2022,Digital1122,,SPF Management PPC Management INV 112022D-2400,Store List:01 Jacksonville,,2000-99 · Suspense,217.16,,"2,745.66"
+,,,,,,,,,General Journal,11/30/2022,Digital1122,,SPF Management PPC Management INV 112022D-2400,Store List:01 Jacksonville,,2000-99 · Suspense,12.80,,"2,758.46"
+,,,,,,,,,General Journal,11/30/2022,Digital1122,,SPF Management PPC Management INV112022D-2400,Store List:01 Jacksonville,,2000-99 · Suspense,8.93,,"2,767.39"
+,,,,,,Total 6551-00 · Internet/Online,,,,,,,,,,,"2,767.39",0.00,"2,767.39"
+,,,,,,6490-00 · Advertising and Promotion - Other,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/25/2022,blkfrdy,,Black Friday Promotion,Store List:01 Jacksonville,,-SPLIT-,260.00,,260.00
+,,,,,,Total 6490-00 · Advertising and Promotion - Other,,,,,,,,,,,260.00,0.00,260.00
+,,,,,Total 6490-00 · Advertising and Promotion,,,,,,,,,,,,"6,981.06",0.00,"6,981.06"
+,,,,,6555-00 · Other Selling Expenses,,,,,,,,,,,,,,
+,,,,,,6018-00 · Cash Short (Long),,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/07/2022,DailyIncome,,Cash,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,,20.00,-20.00
+,,,,,,,,,General Journal,11/08/2022,DailyIncome,,Cash,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,20.40,,0.40
+,,,,,,,,,General Journal,11/22/2022,DailyIncome,,Black Friday Withholding,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,271.00,,271.40
+,,,,,,,,,General Journal,11/23/2022,DailyIncome,,Black Friday Withholding,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,409.00,,680.40
+,,,,,,,,,General Journal,11/25/2022,blkfrdy,,Black Friday Promotion,Store List:01 Jacksonville,,6490-00 · Advertising and Promotion,,260.00,420.40
+,,,,,,,,,General Journal,11/28/2022,DailyIncome,,Black Friday Leftover Funds,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,,420.00,0.40
+,,,,,,,,,General Journal,11/29/2022,DailyIncome,,Cash,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,,0.02,0.38
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,,,0.38
+,,,,,,,,,General Journal,11/30/2022,IR1122,,RSSS ZOOM Revenue Report for MTD,Store List:01 Jacksonville,,4000-00 · Rental Income,9.52,,9.90
+,,,,,,Total 6018-00 · Cash Short (Long),,,,,,,,,,,709.92,700.02,9.90
+,,,,,Total 6555-00 · Other Selling Expenses,,,,,,,,,,,,709.92,700.02,9.90
+,,,,Total 6001-00 · Selling Expense,,,,,,,,,,,,,"7,690.98",700.02,"6,990.96"
+,,,,6002-00 · General & Admin Expense,,,,,,,,,,,,,,,
+,,,,,6019-00 · Bank Charges,,,,,,,,,,,,,,
+,,,,,,6023-00 · Bank Card Fees,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/02/2022,ccfees,,Global Payments STL,Store List:01 Jacksonville,,-SPLIT-,"2,215.52",,"2,215.52"
+,,,,,,,,,General Journal,11/02/2022,INTERCHNG,,Monthly Online I/C Charges,Store List:01 Jacksonville,,-SPLIT-,425.05,,"2,640.57"
+,,,,,,,,,General Journal,11/02/2022,SvcCharge,,Monthly Service Charges,Store List:01 Jacksonville,,-SPLIT-,43.22,,"2,683.79"
+,,,,,,,,,General Journal,11/02/2022,FEE FRST,,Monthly Merchant Fees,Store List:01 Jacksonville,,-SPLIT-,192.63,,"2,876.42"
+,,,,,,Total 6023-00 · Bank Card Fees,,,,,,,,,,,"2,876.42",0.00,"2,876.42"
+,,,,,,6025-00 · Bank Service Charges,,,,,,,,,,,,,
+,,,,,,,,,Check,11/30/2022,,,Service Charge,Store List:01 Jacksonville,,1016-01 · Store Bank Acct - Jacksonville,25.00,,25.00
+,,,,,,Total 6025-00 · Bank Service Charges,,,,,,,,,,,25.00,0.00,25.00
+,,,,,Total 6019-00 · Bank Charges,,,,,,,,,,,,"2,901.42",0.00,"2,901.42"
+,,,,Total 6002-00 · General & Admin Expense,,,,,,,,,,,,,"2,901.42",0.00,"2,901.42"
+,,,,6029-00 · Professional Fees,,,,,,,,,,,,,,,
+,,,,,6035-00 · Accounting Fees,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,MTD ACCTFEE,,MTD Accounting fees,Store List:01 Jacksonville,,-SPLIT-,"4,775.90",,"4,775.90"
+,,,,,Total 6035-00 · Accounting Fees,,,,,,,,,,,,"4,775.90",0.00,"4,775.90"
+,,,,Total 6029-00 · Professional Fees,,,,,,,,,,,,,"4,775.90",0.00,"4,775.90"
+,,,,6039-00 · Insurance Expense - Admin,,,,,,,,,,,,,,,
+,,,,,6040-00 · Property & General Liability,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,731,"McDaniel - Whitley, Inc",To expense prepaid insurance - data breach,Store List:01 Jacksonville,,-SPLIT-,103.13,,103.13
+,,,,,,,,,General Journal,11/30/2022,873,"McDaniel - Whitley, Inc",To expense prepaid insurance - Umbrella,Store List:01 Jacksonville,,-SPLIT-,163.09,,266.22
+,,,,,,,,,General Journal,11/30/2022,GENLIAB2211,,To expense Prepaid Insurance - General Liability for November,Store List:01 Jacksonville,,-SPLIT-,493.75,,759.97
+,,,,,Total 6040-00 · Property & General Liability,,,,,,,,,,,,759.97,0.00,759.97
+,,,,Total 6039-00 · Insurance Expense - Admin,,,,,,,,,,,,,759.97,0.00,759.97
+,,,,"6059-00 · Postage, Freight & Supplies",,,,,,,,,,,,,,,
+,,,,,6000-00 · Office Supplies,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/15/2022,A2475843,Coast to Coast Computer Products,PO: N29602,Store List:01 Jacksonville,,2000-00 · Accounts Payable,359.98,,359.98
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,AMAZON.COM*HI9VW1LJ0 AMZN,Store List:01 Jacksonville,,2000-99 · Suspense,32.60,,392.58
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,SAMSCLUB #8104,Store List:01 Jacksonville,,2000-99 · Suspense,41.06,,433.64
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,ARKANSAS OFFICE PRODUCTS,Store List:01 Jacksonville,,2000-99 · Suspense,21.90,,455.54
+,,,,,Total 6000-00 · Office Supplies,,,,,,,,,,,,455.54,0.00,455.54
+,,,,,6015-00 · Freight,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/11/2022,111122JCK,Arkansas Waste Tire Service,RNR - JACKSONVILLE,Store List:01 Jacksonville,,2000-00 · Accounts Payable,468.00,,468.00
+,,,,,Total 6015-00 · Freight,,,,,,,,,,,,468.00,0.00,468.00
+,,,,,6065-00 · General Supplies,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/02/2022,1002137,Auto Detail Supplies,PO: N29469,Store List:01 Jacksonville,,2000-00 · Accounts Payable,153.25,,153.25
+,,,,,,,,,Bill,11/10/2022,25022414,Myers Tire #50,PO: N29534,Store List:01 Jacksonville,,2000-00 · Accounts Payable,59.72,,212.97
+,,,,,,,,,Bill,11/15/2022,461362,"FastCo USA, Inc",PO: N29606,Store List:01 Jacksonville,,2000-00 · Accounts Payable,896.96,,"1,109.93"
+,,,,,,,,,Bill,11/15/2022,461372,"FastCo USA, Inc",PO: N29606,Store List:01 Jacksonville,,2000-00 · Accounts Payable,128.00,,"1,237.93"
+,,,,,,,,,Bill,11/18/2022,25022923,Myers Tire #50,PO: N29643,Store List:01 Jacksonville,,2000-00 · Accounts Payable,85.08,,"1,323.01"
+,,,,,,,,,Bill,11/21/2022,25023006,Myers Tire #50,PO: N29643,Store List:01 Jacksonville,,2000-00 · Accounts Payable,347.83,,"1,670.84"
+,,,,,,,,,Bill,11/28/2022,125437,Velocity Wheel New York,PO: N29661,Store List:01 Jacksonville,,2000-00 · Accounts Payable,30.00,,"1,700.84"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,WM SUPERCENTER #24,Store List:01 Jacksonville,,2000-99 · Suspense,6.10,,"1,706.94"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,LOWES #01766*,Store List:01 Jacksonville,,2000-99 · Suspense,7.16,,"1,714.10"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,DOLLAR-GENERAL #1254,Store List:01 Jacksonville,,2000-99 · Suspense,2.19,,"1,716.29"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,Amazon.com*HW3R269W2,Store List:01 Jacksonville,,2000-99 · Suspense,97.32,,"1,813.61"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,DOLLAR-GENERAL #1254,Store List:01 Jacksonville,,2000-99 · Suspense,27.65,,"1,841.26"
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,HARBOR FREIGHT TOOLS 491,Store List:01 Jacksonville,,2000-99 · Suspense,57.99,,"1,899.25"
+,,,,,Total 6065-00 · General Supplies,,,,,,,,,,,,"1,899.25",0.00,"1,899.25"
+,,,,"Total 6059-00 · Postage, Freight & Supplies",,,,,,,,,,,,,"2,822.79",0.00,"2,822.79"
+,,,,6068-00 · Occupancy Expense,,,,,,,,,,,,,,,
+,,,,,6300-00 · Rent Expense,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/01/2022,Rent - 2022- 11,RNR Investments LLC,Rent due RNR Investments,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"7,000.00",,"7,000.00"
+,,,,,Total 6300-00 · Rent Expense,,,,,,,,,,,,"7,000.00",0.00,"7,000.00"
+,,,,,6305-00 · Utilities,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/16/2022,2281729-2017-2,Waste Management LR,12.01.22 to 12.31.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"2,400.03",,"2,400.03"
+,,,,,,,,,Bill,11/21/2022,1813500,Jacksonville Water Works,10.24.22 to 11.21.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,40.53,,"2,440.56"
+,,,,,,,,,Bill,11/28/2022,NOV22 3468,Summit Utilities (CenterPoint),10.20.22 to 11.18.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,154.24,,"2,594.80"
+,,,,,,,,,Bill,11/30/2022,65007344040,Entergy,10.27.22 to 11.25.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,537.44,,"3,132.24"
+,,,,,Total 6305-00 · Utilities,,,,,,,,,,,,"3,132.24",0.00,"3,132.24"
+,,,,,6310-00 · Property Insurance,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,Prop Insur,,To expense property insurance for Oct.,Store List:01 Jacksonville,,-SPLIT-,340.18,,340.18
+,,,,,Total 6310-00 · Property Insurance,,,,,,,,,,,,340.18,0.00,340.18
+,,,,,6315-00 · Security,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,7498905,"Alliance Security, Inc",12.01.22 to 12.31.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,21.16,,21.16
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,FRONTPOINT SECURITY,Store List:01 Jacksonville,,2000-99 · Suspense,32.84,,54.00
+,,,,,Total 6315-00 · Security,,,,,,,,,,,,54.00,0.00,54.00
+,,,,Total 6068-00 · Occupancy Expense,,,,,,,,,,,,,"10,526.42",0.00,"10,526.42"
+,,,,6079-00 · Equipment Expense,,,,,,,,,,,,,,,
+,,,,,6335-00 · Equipment Rental,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,8002854424,Stericyle (Shred It USA),Site #3000245210 - Jacksonville,Store List:01 Jacksonville,,2000-00 · Accounts Payable,63.45,,63.45
+,,,,,Total 6335-00 · Equipment Rental,,,,,,,,,,,,63.45,0.00,63.45
+,,,,Total 6079-00 · Equipment Expense,,,,,,,,,,,,,63.45,0.00,63.45
+,,,,"6100-00 · Depreciation Expense - F,F&E",,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,FF&E Depr,,Depreciation of Fixed Assets: LI,Store List:01 Jacksonville,,-SPLIT-,0.00,,0.00
+,,,,,,,,,General Journal,11/30/2022,203,,Depreciation of Fixed Assets: FF&E,Store List:01 Jacksonville,,-SPLIT-,5.11,,5.11
+,,,,,,,,,General Journal,11/30/2022,203,,Depreciation of Fixed Assets: FF&E,Store List:01 Jacksonville,,"6100-00 · Depreciation Expense - F,F&E",118.06,,123.17
+,,,,,,,,,General Journal,11/30/2022,204,,Depreciation of Fixed Assets: Fleet,Store List:01 Jacksonville,,-SPLIT-,537.28,,660.45
+,,,,"Total 6100-00 · Depreciation Expense - F,F&E",,,,,,,,,,,,,660.45,0.00,660.45
+,,,,6399-00 · Vehicle Expense,,,,,,,,,,,,,,,
+,,,,,6400-00 · Repair & Maintenance - Vehicles,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,ZIPS WASH CLUB,Store List:01 Jacksonville,,2000-99 · Suspense,30.00,,30.00
+,,,,,Total 6400-00 · Repair & Maintenance - Vehicles,,,,,,,,,,,,30.00,0.00,30.00
+,,,,,6405-00 · Fuel & Oil - Vehicle,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,BUCKS JR CITGO COUNTRY ST,Store List:01 Jacksonville,,2000-99 · Suspense,50.00,,50.00
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,SUPERSTOP # 468,Store List:01 Jacksonville,,2000-99 · Suspense,14.64,,64.64
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,BUCKS JR CITGO COUNTRY ST,Store List:01 Jacksonville,,2000-99 · Suspense,71.00,,135.64
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,BUCKS JR CITGO COUNTRY ST,Store List:01 Jacksonville,,2000-99 · Suspense,70.00,,205.64
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,KUM&GO 0138 JACKSONV,Store List:01 Jacksonville,,2000-99 · Suspense,74.60,,280.24
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,KUM&GO 0138 JACKSONV,Store List:01 Jacksonville,,2000-99 · Suspense,90.00,,370.24
+,,,,,Total 6405-00 · Fuel & Oil - Vehicle,,,,,,,,,,,,370.24,0.00,370.24
+,,,,,6420-00 · Vehicle Insurance,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,Auto Insur,"McDaniel - Whitley, Inc",To expense prepaid insurance - commercial automobile,Store List:01 Jacksonville,,-SPLIT-,77.58,,77.58
+,,,,,Total 6420-00 · Vehicle Insurance,,,,,,,,,,,,77.58,0.00,77.58
+,,,,Total 6399-00 · Vehicle Expense,,,,,,,,,,,,,477.82,0.00,477.82
+,,,,6599-00 · Computer & Internet Expenses,,,,,,,,,,,,,,,
+,,,,,6600-00 · Software license fees,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/01/2022,205290,High Touch Technologies,SOFTWARE LICENSE & SUPPORT FEES,Store List:01 Jacksonville,,2000-00 · Accounts Payable,374.46,,374.46
+,,,,,Total 6600-00 · Software license fees,,,,,,,,,,,,374.46,0.00,374.46
+,,,,,6650-00 · Telephone & Communications,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/01/2022,35468,ESI - Hosted Services,Account 007844; 10.01.22 to 10.31.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,102.00,,102.00
+,,,,,,,,,Bill,11/08/2022,NOV22 8431,Comcast - Jacksonville,11.12.22 to 12.11.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,599.29,,701.29
+,,,,,,,,,Bill,11/18/2022,NOV22 4128,Brightspeed (Century Link),11.18.22 to 12.17.22,Store List:01 Jacksonville,,2000-00 · Accounts Payable,102.47,,803.76
+,,,,,,,,,Bill,11/30/2022,583367399,Granite Telecommunications,Broadband/Modem,Store List:01 Jacksonville,,2000-00 · Accounts Payable,144.08,,947.84
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,APPLE.COM/BILL,Store List:01 Jacksonville,,2000-99 · Suspense,2.99,,950.83
+,,,,,Total 6650-00 · Telephone & Communications,,,,,,,,,,,,950.83,0.00,950.83
+,,,,Total 6599-00 · Computer & Internet Expenses,,,,,,,,,,,,,"1,325.29",0.00,"1,325.29"
+,,,,7010-00 · Payroll Expenses,,,,,,,,,,,,,,,
+,,,,,6200-00 · Salaries & Wages,,,,,,,,,,,,,,
+,,,,,,6201-00 · Salary,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Salary,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,"3,315.00",,"3,315.00"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Salary,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,"3,315.00",,"6,630.00"
+,,,,,,Total 6201-00 · Salary,,,,,,,,,,,"6,630.00",0.00,"6,630.00"
+,,,,,,6202-00 · Hourly,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,DOL Bonus Retro,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,268.45,,268.45
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Regular,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,"7,078.11",,"7,346.56"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Vacation,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,461.76,,"7,808.32"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Regular,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,"6,086.27",,"13,894.59"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Vacation,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,500.00,,"14,394.59"
+,,,,,,Total 6202-00 · Hourly,,,,,,,,,,,"14,394.59",0.00,"14,394.59"
+,,,,,,6203-00 · Overtime hourly,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Overtime,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,656.57,,656.57
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Overtime,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,258.86,,915.43
+,,,,,,Total 6203-00 · Overtime hourly,,,,,,,,,,,915.43,0.00,915.43
+,,,,,,6204-00 · Holiday,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Holiday,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,550.32,,550.32
+,,,,,,Total 6204-00 · Holiday,,,,,,,,,,,550.32,0.00,550.32
+,,,,,,6205-00 · Bonus,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Bonus,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,"2,005.72",,"2,005.72"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Commission,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,"2,875.63",,"4,881.35"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,DOL Bonus,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,133.51,,"5,014.86"
+,,,,,,Total 6205-00 · Bonus,,,,,,,,,,,"5,014.86",0.00,"5,014.86"
+,,,,,Total 6200-00 · Salaries & Wages,,,,,,,,,,,,"27,505.20",0.00,"27,505.20"
+,,,,,7011-00 · Other Employee Expense,,,,,,,,,,,,,,
+,,,,,,6074-00 · Travel & Entertainment,,,,,,,,,,,,,
+,,,,,,,6078-00 · Meals & Entertainment,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,DAVID'S BURGERS BOWMAN,Store List:01 Jacksonville,,2000-99 · Suspense,11.21,,11.21
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,TACO BUENO 8002,Store List:01 Jacksonville,,2000-99 · Suspense,11.84,,23.05
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,LITTLE CAESARS 0286 0004,Store List:01 Jacksonville,,2000-99 · Suspense,47.35,,70.40
+,,,,,,,,,General Journal,11/30/2022,IPCARD1122,,STARHOUSE DONUT,Store List:01 Jacksonville,,2000-99 · Suspense,19.43,,89.83
+,,,,,,,Total 6078-00 · Meals & Entertainment,,,,,,,,,,89.83,0.00,89.83
+,,,,,,Total 6074-00 · Travel & Entertainment,,,,,,,,,,,89.83,0.00,89.83
+,,,,,,6081-00 · Dues & Subscriptions,,,,,,,,,,,,,
+,,,,,,,6082-00 · Dues - Deductible,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,ARDA,,ARDA,Store List:01 Jacksonville,,-SPLIT-,16.67,,16.67
+,,,,,,,Total 6082-00 · Dues - Deductible,,,,,,,,,,16.67,0.00,16.67
+,,,,,,Total 6081-00 · Dues & Subscriptions,,,,,,,,,,,16.67,0.00,16.67
+,,,,,,6220-00 · Payroll Taxes,,,,,,,,,,,,,
+,,,,,,,6221-00 · Unemployment Taxes,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Arkansas SUI,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,3.63,,3.63
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Fed Unemployment,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,4.35,,7.98
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Arkansas SUI,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,5.36,,13.34
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Fed Unemployment,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,6.44,,19.78
+,,,,,,,Total 6221-00 · Unemployment Taxes,,,,,,,,,,19.78,0.00,19.78
+,,,,,,,6226-00 · FICA Match,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Medicare - Employer,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,234.54,,234.54
+,,,,,,,,,General Journal,11/22/2022,PL221122,,OASDI - Employer,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,"1,002.93",,"1,237.47"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Medicare - Employer,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,147.21,,"1,384.68"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,OASDI - Employer,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,629.44,,"2,014.12"
+,,,,,,,Total 6226-00 · FICA Match,,,,,,,,,,"2,014.12",0.00,"2,014.12"
+,,,,,,Total 6220-00 · Payroll Taxes,,,,,,,,,,,"2,033.90",0.00,"2,033.90"
+,,,,,,6235-00 · Retirement Benefits,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/22/2022,PL221122,,401k Match,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,290.48,,290.48
+,,,,,,,,,General Journal,11/30/2022,PL221207,,401k Match,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,168.86,,459.34
+,,,,,,Total 6235-00 · Retirement Benefits,,,,,,,,,,,459.34,0.00,459.34
+,,,,,,6239-00 · Insurance Expense - Employee,,,,,,,,,,,,,
+,,,,,,,6225-00 · Group Health & Life Insurance,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Vision - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,10.04,,10.04
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,38.45,,48.49
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Grooms, Javon",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,23.03,,71.52
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Hammond, Deshawn",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,23.03,,94.55
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Vision - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,11.86,,106.41
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,47.92,,154.33
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Vision - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,5.92,,160.25
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,23.03,,183.28
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Vision - Nelson, Gregory D",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,5.92,,189.20
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Dental Ins - Nelson, Gregory D",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,23.03,,212.23
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.68,,213.91
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"Transamerica - 22.11 - Accident Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,26.68,,240.59
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Long Term Disability - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,3.84,,244.43
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Disability Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,10.38,,254.81
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Grooms, Javon",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.68,,256.49
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"Transamerica - 22.11 - Accident Insurance - Grooms, Javon",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,12.18,,268.67
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Life Ins - Grooms, Javon",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,8.60,,277.27
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Hammond, Deshawn",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.68,,278.95
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Disability Insurance - Hammond, Deshawn",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,16.24,,295.19
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.68,,296.87
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Long Term Disability - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,4.56,,301.43
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Disability Insurance - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,12.36,,313.79
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.68,,315.47
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"Transamerica - 22.11 - Accident Insurance - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,12.18,,327.65
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Long Term Disability - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,10.78,,338.43
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Disability Insurance - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,20.60,,359.03
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Life Ins - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,22.10,,381.13
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Basic Life and AD&D - Nelson, Gregory",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,1.10,,382.23
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"Transamerica - 22.11 - Accident Insurance - Nelson, Gregory",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,12.18,,394.41
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"MetLife - 22.11 - Disability Insurance - Nelson, Gregory",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,9.88,,404.29
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical PPO - Berry, Nickolaus",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,"1,047.07",,"1,451.36"
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical PPO - Grooms, Javon",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,482.75,,"1,934.11"
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical HDHP - Hammond, Deshawn",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,420.33,,"2,354.44"
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical PPO - Holland, Jamie",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,482.75,,"2,837.19"
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical PPO - Jakes, Keith",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,482.75,,"3,319.94"
+,,,,,,,,,General Journal,11/01/2022,EMPBEN2211,,"CIGNA - 22.11 - Medical PPO - Nelson, Gregory",Store List:01 Jacksonville,,1067-00 · Due from Rental Concepts West,482.75,,"3,802.69"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Accident Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,13.34,"3,789.35"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Disability Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,5.19,"3,784.16"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Dental Ins - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,7.71,"3,776.45"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Long Term Disability - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,1.92,"3,774.53"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins PPO - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,308.54,"3,465.99"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Vision - Berry, Nickolaus",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,5.02,"3,460.97"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Accident Insurance - Grooms, Javon",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,6.09,"3,454.88"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Life Ins - Grooms, Javon",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,4.30,"3,450.58"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins PPO - Grooms, Javon",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,50.00,"3,400.58"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Disability Insurance - Hammond, Deshawn",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,8.12,"3,392.46"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins - Hammond, Deshawn",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,12.50,"3,379.96"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Disability Insurance - Holland, Jamie",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,6.18,"3,373.78"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Dental Ins - Holland, Jamie",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,12.45,"3,361.33"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Long Term Disability - Holland, Jamie",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,2.28,"3,359.05"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins PPO - Holland, Jamie",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,50.00,"3,309.05"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Vision - Holland, Jamie",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,5.93,"3,303.12"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Accident Insurance - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,6.09,"3,297.03"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Disability Insurance - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,10.30,"3,286.73"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Life Ins - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,11.05,"3,275.68"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Long Term Disability - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,5.39,"3,270.29"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins PPO - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,50.00,"3,220.29"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Vision - Jakes, Keith",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,2.96,"3,217.33"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Accident Insurance - Nelson, Gregory",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,6.09,"3,211.24"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Disability Insurance - Nelson, Gregory",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,4.94,"3,206.30"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Medical Ins PPO - Nelson, Gregory",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,50.00,"3,156.30"
+,,,,,,,,,General Journal,11/22/2022,PL221122,,"Vision - Nelson, Gregory",Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,2.96,"3,153.34"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Accident Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,13.34,"3,140.00"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Disability Insurance - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,5.19,"3,134.81"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Dental Ins - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,7.71,"3,127.10"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Long Term Disability - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,1.92,"3,125.18"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins PPO - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,308.54,"2,816.64"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Vision - Berry, Nickolaus",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,5.02,"2,811.62"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Accident Insurance - Grooms, Javon",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,6.09,"2,805.53"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Life Ins - Grooms, Javon",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,4.30,"2,801.23"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins PPO - Grooms, Javon",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,50.00,"2,751.23"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Disability Insurance - Hammond, Deshawn",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,8.12,"2,743.11"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins - Hammond, Deshawn",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,12.50,"2,730.61"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Disability Insurance - Holland, Jamie",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,6.18,"2,724.43"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Dental Ins - Holland, Jamie",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,12.45,"2,711.98"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Long Term Disability - Holland, Jamie",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,2.28,"2,709.70"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins PPO - Holland, Jamie",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,50.00,"2,659.70"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Vision - Holland, Jamie",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,5.93,"2,653.77"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Accident Insurance - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,6.09,"2,647.68"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Disability Insurance - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,10.30,"2,637.38"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Life Ins - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,11.05,"2,626.33"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Long Term Disability - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,5.39,"2,620.94"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins PPO - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,50.00,"2,570.94"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Vision - Jakes, Keith",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,2.96,"2,567.98"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Accident Insurance - Nelson, Gregory",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,6.09,"2,561.89"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Disability Insurance - Nelson, Gregory",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,4.94,"2,556.95"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Medical Ins PPO - Nelson, Gregory",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,50.00,"2,506.95"
+,,,,,,,,,General Journal,11/30/2022,PL221207,,"Vision - Nelson, Gregory",Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,2.96,"2,503.99"
+,,,,,,,Total 6225-00 · Group Health & Life Insurance,,,,,,,,,,"3,802.69","1,298.70","2,503.99"
+,,,,,,,6230-00 · Worker's Compensation,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,WCOMP1130,,To accrue worker's comp expense for November,Store List:01 Jacksonville,,-SPLIT-,176.19,,176.19
+,,,,,,,Total 6230-00 · Worker's Compensation,,,,,,,,,,176.19,0.00,176.19
+,,,,,,Total 6239-00 · Insurance Expense - Employee,,,,,,,,,,,"3,978.88","1,298.70","2,680.18"
+,,,,,,6245-00 · Employee Procurement,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,877,,To amortize Talentral annual billing.,Store List:01 Jacksonville,,-SPLIT-,58.00,,58.00
+,,,,,,Total 6245-00 · Employee Procurement,,,,,,,,,,,58.00,0.00,58.00
+,,,,,,6260-00 · Employee Training,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,PP6-TIA,,TIA Training 2020 - (SPF MGMT) Exp 03.22 - 02.23,Store List:01 Jacksonville,,-SPLIT-,18.00,,18.00
+,,,,,,Total 6260-00 · Employee Training,,,,,,,,,,,18.00,0.00,18.00
+,,,,,,6265-00 · Uniforms,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/01/2022,2700007959,UniFirst - Jacksonville 1598254,Contract 970214 - Jacksonville (customer #1585973),Store List:01 Jacksonville,,2000-00 · Accounts Payable,48.33,,48.33
+,,,,,,,,,Bill,11/01/2022,2700007959,UniFirst - Jacksonville 1598254,lost product - Mark Martin,Store List:01 Jacksonville,,2000-00 · Accounts Payable,64.33,,112.66
+,,,,,,,,,Bill,11/08/2022,2700008837,UniFirst - Jacksonville 1598254,Contract 970214 - Jacksonville (customer #1585973),Store List:01 Jacksonville,,2000-00 · Accounts Payable,48.33,,160.99
+,,,,,,,,,General Journal,11/22/2022,PL221122,,Uniform,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,38.00,122.99
+,,,,,,,,,Bill,11/22/2022,2700010471,UniFirst - Jacksonville 1598254,Contract 970214 - Jacksonville (customer #1585973),Store List:01 Jacksonville,,2000-00 · Accounts Payable,47.69,,170.68
+,,,,,,,,,Bill,11/29/2022,2700011265,UniFirst - Jacksonville 1598254,Contract 970214 - Jacksonville (customer #1585973),Store List:01 Jacksonville,,2000-00 · Accounts Payable,47.69,,218.37
+,,,,,,,,,General Journal,11/30/2022,PL221207,,Uniform,Store List:01 Jacksonville,,2200-91 · Accrued Salaries -Admin,,38.00,180.37
+,,,,,,Total 6265-00 · Uniforms,,,,,,,,,,,256.37,76.00,180.37
+,,,,,Total 7011-00 · Other Employee Expense,,,,,,,,,,,,"6,910.99","1,374.70","5,536.29"
+,,,,Total 7010-00 · Payroll Expenses,,,,,,,,,,,,,"34,416.19","1,374.70","33,041.49"
+,,,,"7013-00 · Tax, License & Permit Expense",,,,,,,,,,,,,,,
+,,,,,6052-00 · Personal Property,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,728,,Accrued Tax:  Personal and Real,Store List:01 Jacksonville,,2160-91 · Accrued Property Tax -Admin,689.34,,689.34
+,,,,,Total 6052-00 · Personal Property,,,,,,,,,,,,689.34,0.00,689.34
+,,,,,6054-00 · Real Estate,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,728,,Accrued Tax:  Personal and Real,Store List:01 Jacksonville,,2160-91 · Accrued Property Tax -Admin,351.92,,351.92
+,,,,,Total 6054-00 · Real Estate,,,,,,,,,,,,351.92,0.00,351.92
+,,,,,6056-00 · Sales & Use Tax,,,,,,,,,,,,,,
+,,,,,,,,,Check,11/20/2022,ACH,AR DEPT OF FINANCE & ADMIN-SALES TAX,00288743-SLS Jck-Mbl-Mrk Sales Tax,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,160.98,,160.98
+,,,,,Total 6056-00 · Sales & Use Tax,,,,,,,,,,,,160.98,0.00,160.98
+,,,,,6058-00 · Waste Tire tax,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,NOV- WST - 76711182,AR Dept of Fin and Admin-Misc Tax Section,11/22 Loc 01-08 & 13 WASTE TIRE FEES-MAIL WST-1 Form with Check,Store List:01 Jacksonville,,2000-00 · Accounts Payable,889.20,,889.20
+,,,,,Total 6058-00 · Waste Tire tax,,,,,,,,,,,,889.20,0.00,889.20
+,,,,,6088-00 · Royalty Fees,,,,,,,,,,,,,,
+,,,,,,,,,Bill,11/30/2022,NOV-22 Royalty Fees,"Rent-N-Roll, S.P.F. Management",MTD Royalty Fees,Store List:01 Jacksonville,,2000-00 · Accounts Payable,"4,673.54",,"4,673.54"
+,,,,,Total 6088-00 · Royalty Fees,,,,,,,,,,,,"4,673.54",0.00,"4,673.54"
+,,,,"Total 7013-00 · Tax, License & Permit Expense",,,,,,,,,,,,,"6,764.98",0.00,"6,764.98"
+,,,,6030-00 · Operational Overhead,,,,,,,,,,,,,,,
+,,,,,,,,,General Journal,11/30/2022,OVRHD1122,,Allocation of 99 Operations,Store List:01 Jacksonville,,6030-00 · Operational Overhead,"10,472.45",,"10,472.45"
+,,,,Total 6030-00 · Operational Overhead,,,,,,,,,,,,,"10,472.45",0.00,"10,472.45"
+,,,Total Expense,,,,,,,,,,,,,,"83,658.11","2,074.72","81,583.39"
+,Net Ordinary Income,,,,,,,,,,,,,,,,"138,526.55","166,380.84","27,854.29"
+,Other Income/Expense,,,,,,,,,,,,,,,,,,
+,,Other Income,,,,,,,,,,,,,,,,,
+,,,7005-00 · Recovery of Charged-Off Accts,,,,,,,,,,,,,,,,
+,,,,,,,,,Credit,11/01/2022,22.10.01 - 22.10.31,Professional Credit Management,"Payment Willis, Eric 775965 $25.00 Payment Remaining Balance $361.00",Store List:01 Jacksonville,,2000-00 · Accounts Payable,,15.00,15.00
+,,,Total 7005-00 · Recovery of Charged-Off Accts,,,,,,,,,,,,,,0.00,15.00,15.00
+,,,7004-00 · Purchase Discount,,,,,,,,,,,,,,,,
+,,,,,,,,,Check,11/20/2022,ACH,AR DEPT OF FINANCE & ADMIN-SALES TAX,00288743-SLS Jck-Mbl-Mrk Sales Tax,Store List:01 Jacksonville,,1015-30 · Intrust Operating Account,,328.82,328.82
+,,,Total 7004-00 · Purchase Discount,,,,,,,,,,,,,,0.00,328.82,328.82
+,,Total Other Income,,,,,,,,,,,,,,,0.00,343.82,343.82
+,Net Other Income,,,,,,,,,,,,,,,,0.00,343.82,343.82
+Net Income,,,,,,,,,,,,,,,,,"138,526.55","166,724.66","28,198.11"
+,,,,,,,,,,,,,,,,,,,
