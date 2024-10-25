@@ -59,6 +59,10 @@
                 <option value="Director" class="form-control">Director </option>
                 <option value="Sales Manager" class="form-control">Sales Manager</option>
                 <option value="Sales Employee" class="form-control">Sales Employee</option>
+<<<<<<< HEAD
+=======
+                <option value="Accounting Office" class="form-control">Accounting Office</option>
+>>>>>>> 0b37fa62 (New code added)
              </select>
              @error('role')
              <div style="color:red; font-weight: 100;font-size: small;">{{ $message }}</div>

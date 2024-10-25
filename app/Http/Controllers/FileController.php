@@ -77,7 +77,6 @@ class FileController extends Controller
 
     public function file(Request $request)
     {
-       
         $datas = new Revenue();
         $request->validate([
             'file' => 'required|mimes:csv,txt'
@@ -104,8 +103,11 @@ class FileController extends Controller
             }
             fclose($open);
         }
+
+        // echo "<pre>";
         // print_r($datas);
         // die;
+
         foreach ($datas as $k => $data) {
             $a = date_create($data[0]);
             $date = date_format($a, "m/d/Y");
@@ -117,7 +119,7 @@ class FileController extends Controller
                 "SalesTaxColl" => $data[2],
                 "RentalIncome" => $data[3],
                 "CashSales" => $data[4],
-                "CashSalesNoninventory" => $data[5],
+                "CashSalesNoninventory" => ($data[5] == '#N/A') ? 0 : $data[5],
                 "EarlyPurchaseOption" => $data[6],
                 "RollPro" => $data[7],
                 "CollectionFeeInHouse" => $data[8],
@@ -132,20 +134,31 @@ class FileController extends Controller
                 "ManagementFee" => $data[17],
                 "SubfranchiseeRoyaltyIncome" => $data[18]
             );
+
             foreach ($dataa as $key => $value) {
                 if ($value == '') {
-                    //   $value == '0';
                     $dataa[$key] = '0';
                 }
             }
+
+            // echo "<pre>";
+            // print_r($dataa);
+
             $rev = DB::table('Revenue')->select('*')
                 ->where('Date', $cdate)
                 ->where('Location', $dataa['Location'])
                 ->get()->toArray();
+
+            // echo "<pre>";
+            // print_r($rev);
+
             $del = DB::table('deliveries')->select('*')->where('date', $cdate)
                 ->where('location', $dataa['Location'])
                 ->get()->toArray();
-            // echo "<pre>";print_r($del);die;
+
+            // echo "<pre>";
+            // print_r($del);
+
             if (!$del) {
                 $deldata =
                     array(
@@ -168,13 +181,33 @@ class FileController extends Controller
                     ->where('location', $dataa['Location'])->update($deldata);
             }
             if (!$rev) {
+                // echo "if";
+                // die;
+
                 $id = DB::table('Revenue')->insertGetId($dataa);
                 Session::put('lastinsertid', $id);
                 $fdataa = array(
                     'data_id' => Session::get('lastinsertid'),
                     "Date" => $cdate,
-                    "Location" => $data[1], 'depreciation_inventory' => $data[19], 'paidout_epocharge' => $data[20], 'cashsalechargeoffs' => $data[21], 'skipstolenchargeoffs' => $data[22], 'insurancechargeoffs' => $data[23], 'returneddamagednonrepairable' => $data[24], 'nonrepairablechargeoffs' => $data[25], 'otherchargeoff' => $data[26], 'pastdueaccountchargeoff' => $data[27], 'inventorycostadjustment' => $data[28], 'chargeoffexpenseother' => $data[29], 'clubremittance' => $data[30], 'rentrefunds' => $data[31], 'partsinventoryrepair' => $data[32], 'laborinventoryrepair' => $data[33], 'inventoryrepairother' => $data[34]
+                    "Location" => $data[1],
+                    'depreciation_inventory' => $data[19],
+                    'paidout_epocharge' => $data[20],
+                    'cashsalechargeoffs' => $data[21],
+                    'skipstolenchargeoffs' => $data[22],
+                    'insurancechargeoffs' => $data[23],
+                    'returneddamagednonrepairable' => $data[24],
+                    'nonrepairablechargeoffs' => $data[25],
+                    'otherchargeoff' => $data[26],
+                    'pastdueaccountchargeoff' => $data[27],
+                    'inventorycostadjustment' => $data[28],
+                    'chargeoffexpenseother' => $data[29],
+                    'clubremittance' => $data[30],
+                    'rentrefunds' => ($data[31] == '') ? 0 : $data[31],
+                    'partsinventoryrepair' => $data[32],
+                    'laborinventoryrepair' => $data[33],
+                    'inventoryrepairother' => $data[34]
                 );
+
                 DB::table('Cogsdata')->insert($fdataa);
                 $edata =
                     array(
@@ -198,7 +231,54 @@ class FileController extends Controller
                         "WebsiteDevelopment" => $data[47],
                         "Sponsorships" => $data[48],
                         "InternetOnline" => $data[49],
-                        "AdvertisingandPromotionOther" => $data[50], "SpecialEvents" => $data[51], "Website" => $data[52], "CashShortLong" => $data[53], 'VINSearchFees' => $data[54], 'InternalPostage' => $data[55], 'AdministrativeCollections' => $data[56], 'OtherSellingExpensesOther' => $data[57], 'SellingExpenseOther' => $data[58], 'BadChecks' => $data[59], 'NSFCheckFees' => $data[60], 'BankCardFees' => $data[61], 'BankServiceCharges' => $data[62], 'LateFees' => $data[63], 'BankChargesOther' => $data[64], 'GeneralAdminExpenseOther' => $data[65], 'LegalFees' => $data[66], 'AccountingFees' => $data[67], 'ConsultingFees' => $data[68], 'ProfessionalFeesOther' =>  $data[69], 'PropertyGeneralLiability' => $data[70], 'OfficersLife' => $data[71], 'InsuranceExpenseAdminOther' =>  $data[72], 'OfficeSupplies' => $data[73], 'Postage' => $data[74], 'Freight' => $data[75], 'GeneralSupplies' =>  $data[76], 'PostageFreightSuppliesOther' =>  $data[77], 'RentExpense' =>  $data[78], 'Utilities' => $data[79], 'PropertyInsurance' => $data[80], 'Security' => $data[81], 'PestControl' => $data[82], 'RepairMaintenancBuilding' =>  $data[83], 'RelocationExpenses' =>  $data[84], 'OccupancyExpenseOther' => $data[85], 'RepairsMaintenanceEquip' => $data[86], 'EquipmentRental' => $data[87], 'EquipmentExpenseOther' => $data[88], 'DepreciationExpenseFFE' => $data[89], 'AmortizationExpense' => $data[90], 'RepairMaintenanceVehicles' => $data[91], 'FuelOilVehicle' =>  $data[92], 'LeaseVehicle' => $data[93], 'VehicleInsurance' => $data[94], 'VehicleLicenses' => $data[95], 'VehicleExpenseOther' => $data[96], 'DepreciationExpense' => $data[97]
+                        "AdvertisingandPromotionOther" => $data[50],
+                        "SpecialEvents" => $data[51],
+                        "Website" => $data[52],
+                        "CashShortLong" => $data[53],
+                        'VINSearchFees' => $data[54],
+                        'InternalPostage' => $data[55],
+                        'AdministrativeCollections' => $data[56],
+                        'OtherSellingExpensesOther' => $data[57],
+                        'SellingExpenseOther' => $data[58],
+                        'BadChecks' => $data[59],
+                        'NSFCheckFees' => $data[60],
+                        'BankCardFees' => $data[61],
+                        'BankServiceCharges' => $data[62],
+                        'LateFees' => $data[63],
+                        'BankChargesOther' => $data[64],
+                        'GeneralAdminExpenseOther' => $data[65],
+                        'LegalFees' => $data[66],
+                        'AccountingFees' => $data[67],
+                        'ConsultingFees' => $data[68],
+                        'ProfessionalFeesOther' =>  $data[69],
+                        'PropertyGeneralLiability' => $data[70],
+                        'OfficersLife' => $data[71],
+                        'InsuranceExpenseAdminOther' =>  $data[72],
+                        'OfficeSupplies' => $data[73],
+                        'Postage' => $data[74],
+                        'Freight' => $data[75],
+                        'GeneralSupplies' =>  $data[76],
+                        'PostageFreightSuppliesOther' =>  $data[77],
+                        'RentExpense' =>  $data[78],
+                        'Utilities' => $data[79],
+                        'PropertyInsurance' => $data[80],
+                        'Security' => $data[81],
+                        'PestControl' => $data[82],
+                        'RepairMaintenancBuilding' =>  $data[83],
+                        'RelocationExpenses' =>  $data[84],
+                        'OccupancyExpenseOther' => $data[85],
+                        'RepairsMaintenanceEquip' => $data[86],
+                        'EquipmentRental' => $data[87],
+                        'EquipmentExpenseOther' => $data[88],
+                        'DepreciationExpenseFFE' => $data[89],
+                        'AmortizationExpense' => $data[90],
+                        'RepairMaintenanceVehicles' => $data[91],
+                        'FuelOilVehicle' =>  $data[92],
+                        'LeaseVehicle' => $data[93],
+                        'VehicleInsurance' => $data[94],
+                        'VehicleLicenses' => $data[95],
+                        'VehicleExpenseOther' => $data[96],
+                        'DepreciationExpense' => $data[97]
                     );
                 $eid = DB::table('expense')->insertGetId($edata);
                 Session::put('elastinsertid', $eid);
@@ -223,7 +303,58 @@ class FileController extends Controller
                         "Holiday" => $data[110],
                         "Bonus" => $data[111],
                         "BonusReimbursementDue" => $data[112],
-                        "SalariesWagesOther" => $data[113], "MileageReimbursement" => $data[114], "TravelExpense" => $data[115], "MealsEntertainment" => $data[116], 'TravelEntertainmentOther' => $data[117], 'DuesDeductible' => $data[118], 'DuesNonDeductible' => $data[119], 'DuesSubscriptionsOther' => $data[120], 'FFCRATaxes' => $data[121], 'UnemploymentTaxes' => $data[122], 'FICAMatch' => $data[123], 'PayrollTaxesOther' => $data[124], 'RetirementBenefits' => $data[125], 'GroupHealthLifeInsurance' => $data[126], 'WorkerCompensation' => $data[127], 'InsuranceExpenseEmployeeOther' => $data[128], 'MedicalExpenses' => $data[129], 'EmployeeProcurement' => $data[130], 'DrugScreening' => $data[131], 'EmployeeMovingExpense' => $data[132], 'SeminarsEducation' => $data[133], 'EmployeeTraining' => $data[134], 'Uniforms' => $data[135], 'AwardsGifts' => $data[136], 'Banquet' => $data[137], 'SpecialEvents' => $data[138], 'LeasedEmployees' => $data[139], 'MovingExpenseAdministrative' => $data[140], 'OtherEmployeeExpenseOther' => $data[141], 'PayrollExpensesOther' => $data[142], 'FranchiseTax' => $data[143], 'PersonalProperty' => $data[144], 'RealEstate' => $data[145], 'SalesUseTax' => $data[146], 'WasteTiretax' => $data[147], 'MiscellaneousTax' => $data[148], 'BusinessLicensesPermits' => $data[149], 'FinesPenalties' => $data[150], 'RoyaltyFeesSherwood' => $data[151], 'RoyaltyFeesMabelvale' => $data[152], 'RoyaltyFeesConway' => $data[153], 'RoyaltyFeesFayetteville' => $data[154], 'RoyaltyFeesRogers' => $data[155], 'RoyaltyFeesDallas' => $data[156], 'RoyaltyFeesFtSmith' => $data[157], 'RoyaltyFeesAdmin' => $data[158], 'RoyaltyFeesOther' => $data[159], 'TaxLicensePermitExpenseOther' => $data[160], 'OperationalOverhead' => $data[161], 'Payoffs' => $data[175], 'otherIncome' => $data[164], 'purchasedisc' => $data[166]
+                        "SalariesWagesOther" => $data[113],
+                        "MileageReimbursement" => $data[114],
+                        "TravelExpense" => $data[115],
+                        "MealsEntertainment" => $data[116],
+                        'TravelEntertainmentOther' => $data[117],
+                        'DuesDeductible' => $data[118],
+                        'DuesNonDeductible' => $data[119],
+                        'DuesSubscriptionsOther' => $data[120],
+                        'FFCRATaxes' => $data[121],
+                        'UnemploymentTaxes' => $data[122],
+                        'FICAMatch' => $data[123],
+                        'PayrollTaxesOther' => $data[124],
+                        'RetirementBenefits' => $data[125],
+                        'GroupHealthLifeInsurance' => $data[126],
+                        'WorkerCompensation' => $data[127],
+                        'InsuranceExpenseEmployeeOther' => $data[128],
+                        'MedicalExpenses' => $data[129],
+                        'EmployeeProcurement' => $data[130],
+                        'DrugScreening' => $data[131],
+                        'EmployeeMovingExpense' => $data[132],
+                        'SeminarsEducation' => $data[133],
+                        'EmployeeTraining' => $data[134],
+                        'Uniforms' => $data[135],
+                        'AwardsGifts' => $data[136],
+                        'Banquet' => $data[137],
+                        'SpecialEvents' => $data[138],
+                        'LeasedEmployees' => $data[139],
+                        'MovingExpenseAdministrative' => $data[140],
+                        'OtherEmployeeExpenseOther' => $data[141],
+                        'PayrollExpensesOther' => $data[142],
+                        'FranchiseTax' => $data[143],
+                        'PersonalProperty' => $data[144],
+                        'RealEstate' => $data[145],
+                        'SalesUseTax' => $data[146],
+                        'WasteTiretax' => $data[147],
+                        'MiscellaneousTax' => $data[148],
+                        'BusinessLicensesPermits' => $data[149],
+                        'FinesPenalties' => $data[150],
+                        'RoyaltyFeesSherwood' => $data[151],
+                        'RoyaltyFeesMabelvale' => $data[152],
+                        'RoyaltyFeesConway' => $data[153],
+                        'RoyaltyFeesFayetteville' => $data[154],
+                        'RoyaltyFeesRogers' => $data[155],
+                        'RoyaltyFeesDallas' => $data[156],
+                        'RoyaltyFeesFtSmith' => $data[157],
+                        'RoyaltyFeesAdmin' => $data[158],
+                        'RoyaltyFeesOther' => $data[159],
+                        'TaxLicensePermitExpenseOther' => $data[160],
+                        'OperationalOverhead' => $data[161],
+                        'Payoffs' => $data[175],
+                        'otherIncome' => $data[164],
+                        'purchasedisc' => $data[166]
                     );
                 $expdata = DB::table('expense1')->insert($e1data);
                 $custdata =
@@ -232,18 +363,44 @@ class FileController extends Controller
                         "Date" => $cdate,
                         "Location" => $data[1],
                         "Customers" => $data[172],
+                        "IdealCust" => $data[177],
+                        "IdealAgre" => $data[178]
                         // "dummy_date" => '01-'.$cdate
                     );
 
                 DB::table('Customer')->insert($custdata);
             } else {
+                // echo "else";
+                // die;
+
                 DB::table('Revenue')->where('Date', $cdate)
                     ->where('Location', $dataa['Location'])->update($dataa);
                 // Session::put('lastinsertid',Session::get('lastinsertid'));
                 $fdataa = array(
-                    'data_id' => $rev[0]->id,  "Date" => $cdate,
-                    "Location" => $data[1], 'depreciation_inventory' => $data[19], 'paidout_epocharge' => $data[20], 'cashsalechargeoffs' => $data[21], 'skipstolenchargeoffs' => $data[22], 'insurancechargeoffs' => $data[23], 'returneddamagednonrepairable' => $data[24], 'nonrepairablechargeoffs' => $data[25], 'otherchargeoff' => $data[26], 'pastdueaccountchargeoff' => $data[27], 'inventorycostadjustment' => $data[28], 'chargeoffexpenseother' => $data[29], 'clubremittance' => $data[30], 'rentrefunds' => $data[31], 'partsinventoryrepair' => $data[32], 'laborinventoryrepair' => $data[33], 'inventoryrepairother' => $data[34]
+                    'data_id' => $rev[0]->id,
+                    "Date" => $cdate,
+                    "Location" => $data[1],
+                    'depreciation_inventory' => $data[19],
+                    'paidout_epocharge' => $data[20],
+                    'cashsalechargeoffs' => $data[21],
+                    'skipstolenchargeoffs' => $data[22],
+                    'insurancechargeoffs' => $data[23],
+                    'returneddamagednonrepairable' => $data[24],
+                    'nonrepairablechargeoffs' => $data[25],
+                    'otherchargeoff' => $data[26],
+                    'pastdueaccountchargeoff' => $data[27],
+                    'inventorycostadjustment' => $data[28],
+                    'chargeoffexpenseother' => $data[29],
+                    'clubremittance' => $data[30],
+                    'rentrefunds' => ($data[31] == '') ? 0 : $data[31],
+                    'partsinventoryrepair' => $data[32],
+                    'laborinventoryrepair' => $data[33],
+                    'inventoryrepairother' => $data[34]
                 );
+
+                // echo "<pre>";
+                // print_r($fdataa);
+
                 DB::table('Cogsdata')->where('data_id', $rev[0]->id)->where('Date', $cdate)
                     ->where('Location', $dataa['Location'])->update($fdataa);
 
@@ -269,15 +426,67 @@ class FileController extends Controller
                         "WebsiteDevelopment" => $data[47],
                         "Sponsorships" => $data[48],
                         "InternetOnline" => $data[49],
-                        "AdvertisingandPromotionOther" => $data[50], "SpecialEvents" => $data[51], "Website" => $data[52], "CashShortLong" => $data[53], 'VINSearchFees' => $data[54], 'InternalPostage' => $data[55], 'AdministrativeCollections' => $data[56], 'OtherSellingExpensesOther' => $data[57], 'SellingExpenseOther' => $data[58], 'BadChecks' => $data[59], 'NSFCheckFees' => $data[60], 'BankCardFees' => $data[61], 'BankServiceCharges' => $data[62], 'LateFees' => $data[63], 'BankChargesOther' => $data[64], 'GeneralAdminExpenseOther' => $data[65], 'LegalFees' => $data[66], 'AccountingFees' => $data[67], 'ConsultingFees' => $data[68], 'ProfessionalFeesOther' =>  $data[69], 'PropertyGeneralLiability' => $data[70], 'OfficersLife' => $data[71], 'InsuranceExpenseAdminOther' =>  $data[72], 'OfficeSupplies' => $data[73], 'Postage' => $data[74], 'Freight' => $data[75], 'GeneralSupplies' =>  $data[76], 'PostageFreightSuppliesOther' =>  $data[77], 'RentExpense' =>  $data[78], 'Utilities' => $data[79], 'PropertyInsurance' => $data[80], 'Security' => $data[81], 'PestControl' => $data[82], 'RepairMaintenancBuilding' =>  $data[83], 'RelocationExpenses' =>  $data[84], 'OccupancyExpenseOther' => $data[85], 'RepairsMaintenanceEquip' => $data[86], 'EquipmentRental' => $data[87], 'EquipmentExpenseOther' => $data[88], 'DepreciationExpenseFFE' => $data[89], 'AmortizationExpense' => $data[90], 'RepairMaintenanceVehicles' => $data[91], 'FuelOilVehicle' =>  $data[92], 'LeaseVehicle' => $data[93], 'VehicleInsurance' => $data[94], 'VehicleLicenses' => $data[95], 'VehicleExpenseOther' => $data[96], 'DepreciationExpense' => $data[97]
+                        "AdvertisingandPromotionOther" => $data[50],
+                        "SpecialEvents" => $data[51],
+                        "Website" => $data[52],
+                        "CashShortLong" => $data[53],
+                        'VINSearchFees' => $data[54],
+                        'InternalPostage' => $data[55],
+                        'AdministrativeCollections' => $data[56],
+                        'OtherSellingExpensesOther' => $data[57],
+                        'SellingExpenseOther' => $data[58],
+                        'BadChecks' => $data[59],
+                        'NSFCheckFees' => $data[60],
+                        'BankCardFees' => $data[61],
+                        'BankServiceCharges' => $data[62],
+                        'LateFees' => $data[63],
+                        'BankChargesOther' => $data[64],
+                        'GeneralAdminExpenseOther' => $data[65],
+                        'LegalFees' => $data[66],
+                        'AccountingFees' => $data[67],
+                        'ConsultingFees' => $data[68],
+                        'ProfessionalFeesOther' =>  $data[69],
+                        'PropertyGeneralLiability' => $data[70],
+                        'OfficersLife' => $data[71],
+                        'InsuranceExpenseAdminOther' =>  $data[72],
+                        'OfficeSupplies' => $data[73],
+                        'Postage' => $data[74],
+                        'Freight' => $data[75],
+                        'GeneralSupplies' =>  $data[76],
+                        'PostageFreightSuppliesOther' =>  $data[77],
+                        'RentExpense' =>  $data[78],
+                        'Utilities' => $data[79],
+                        'PropertyInsurance' => $data[80],
+                        'Security' => $data[81],
+                        'PestControl' => $data[82],
+                        'RepairMaintenancBuilding' =>  $data[83],
+                        'RelocationExpenses' =>  $data[84],
+                        'OccupancyExpenseOther' => $data[85],
+                        'RepairsMaintenanceEquip' => $data[86],
+                        'EquipmentRental' => $data[87],
+                        'EquipmentExpenseOther' => $data[88],
+                        'DepreciationExpenseFFE' => $data[89],
+                        'AmortizationExpense' => $data[90],
+                        'RepairMaintenanceVehicles' => $data[91],
+                        'FuelOilVehicle' =>  $data[92],
+                        'LeaseVehicle' => $data[93],
+                        'VehicleInsurance' => $data[94],
+                        'VehicleLicenses' => $data[95],
+                        'VehicleExpenseOther' => $data[96],
+                        'DepreciationExpense' => $data[97]
                     );
 
+                // echo "<pre>";
+                // print_r($edata);
+                // die;
 
                 DB::table('expense')->where('data_id', $rev[0]->id)->where('Date', $cdate)
                     ->where('Location', $dataa['Location'])->update($edata);;
                 $c = DB::table('expense')->where('data_id', $rev[0]->id)->where('Date', $cdate)
                     ->where('Location', $dataa['Location'])->get();
 
+                // echo "<pre>";
+                // print_r($c);
 
                 $e1data =
                     array(
@@ -304,7 +513,53 @@ class FileController extends Controller
                         "TravelExpense" => $data[115],
                         "MealsEntertainment" => $data[116],
                         'TravelEntertainmentOther' => $data[117],
-                        'DuesDeductible' => $data[118], 'DuesNonDeductible' => $data[119], 'DuesSubscriptionsOther' => $data[120], 'FFCRATaxes' => $data[121], 'UnemploymentTaxes' => $data[122], 'FICAMatch' => $data[123], 'PayrollTaxesOther' => $data[124], 'RetirementBenefits' => $data[125], 'GroupHealthLifeInsurance' => $data[126], 'WorkerCompensation' => $data[127], 'InsuranceExpenseEmployeeOther' => $data[128], 'MedicalExpenses' => $data[129], 'EmployeeProcurement' => $data[130], 'DrugScreening' => $data[131], 'EmployeeMovingExpense' => $data[132], 'SeminarsEducation' => $data[133], 'EmployeeTraining' => $data[134], 'Uniforms' => $data[135], 'AwardsGifts' => $data[136], 'Banquet' => $data[137], 'SpecialEvents' => $data[138], 'LeasedEmployees' => $data[139], 'MovingExpenseAdministrative' => $data[140], 'OtherEmployeeExpenseOther' => $data[141], 'PayrollExpensesOther' => $data[142], 'FranchiseTax' => $data[143], 'PersonalProperty' => $data[144], 'RealEstate' => $data[145], 'SalesUseTax' => $data[146], 'WasteTiretax' => $data[147], 'MiscellaneousTax' => $data[148], 'BusinessLicensesPermits' => $data[149], 'FinesPenalties' => $data[150], 'RoyaltyFeesSherwood' => $data[151], 'RoyaltyFeesMabelvale' => $data[152], 'RoyaltyFeesConway' => $data[153], 'RoyaltyFeesFayetteville' => $data[154], 'RoyaltyFeesRogers' => $data[155], 'RoyaltyFeesDallas' => $data[156], 'RoyaltyFeesFtSmith' => $data[157], 'RoyaltyFeesAdmin' => $data[158], 'RoyaltyFeesOther' => $data[159], 'TaxLicensePermitExpenseOther' => $data[160], 'OperationalOverhead' => $data[161], 'Payoffs' => $data[175], 'otherIncome' => $data[164], 'purchasedisc' => $data[166]
+                        'DuesDeductible' => $data[118],
+                        'DuesNonDeductible' => $data[119],
+                        'DuesSubscriptionsOther' => $data[120],
+                        'FFCRATaxes' => $data[121],
+                        'UnemploymentTaxes' => $data[122],
+                        'FICAMatch' => $data[123],
+                        'PayrollTaxesOther' => $data[124],
+                        'RetirementBenefits' => $data[125],
+                        'GroupHealthLifeInsurance' => $data[126],
+                        'WorkerCompensation' => $data[127],
+                        'InsuranceExpenseEmployeeOther' => $data[128],
+                        'MedicalExpenses' => $data[129],
+                        'EmployeeProcurement' => $data[130],
+                        'DrugScreening' => $data[131],
+                        'EmployeeMovingExpense' => $data[132],
+                        'SeminarsEducation' => $data[133],
+                        'EmployeeTraining' => $data[134],
+                        'Uniforms' => $data[135],
+                        'AwardsGifts' => $data[136],
+                        'Banquet' => $data[137],
+                        'SpecialEvents' => $data[138],
+                        'LeasedEmployees' => $data[139],
+                        'MovingExpenseAdministrative' => $data[140],
+                        'OtherEmployeeExpenseOther' => $data[141],
+                        'PayrollExpensesOther' => $data[142],
+                        'FranchiseTax' => $data[143],
+                        'PersonalProperty' => $data[144],
+                        'RealEstate' => $data[145],
+                        'SalesUseTax' => $data[146],
+                        'WasteTiretax' => $data[147],
+                        'MiscellaneousTax' => $data[148],
+                        'BusinessLicensesPermits' => $data[149],
+                        'FinesPenalties' => $data[150],
+                        'RoyaltyFeesSherwood' => $data[151],
+                        'RoyaltyFeesMabelvale' => $data[152],
+                        'RoyaltyFeesConway' => $data[153],
+                        'RoyaltyFeesFayetteville' => $data[154],
+                        'RoyaltyFeesRogers' => $data[155],
+                        'RoyaltyFeesDallas' => $data[156],
+                        'RoyaltyFeesFtSmith' => $data[157],
+                        'RoyaltyFeesAdmin' => $data[158],
+                        'RoyaltyFeesOther' => $data[159],
+                        'TaxLicensePermitExpenseOther' => $data[160],
+                        'OperationalOverhead' => $data[161],
+                        'Payoffs' => $data[175],
+                        'otherIncome' => $data[164],
+                        'purchasedisc' => $data[166]
                     );
 
                 DB::table('expense1')->where('Date', $cdate)
@@ -315,7 +570,9 @@ class FileController extends Controller
                         'data_id' => $rev[0]->id,
                         "Date" => $cdate,
                         "Location" => $data[1],
-                        "Customers" => $data[172]
+                        "Customers" => $data[172],
+                        "IdealCust" => $data[177],
+                        "IdealAgre" => $data[178]
                     );
                 $a = DB::table('Customer')->where('data_id', $rev[0]->id)->where('Date', $cdate)
                     ->where('Location', $dataa['Location'])->update($custdata);
@@ -342,8 +599,8 @@ class FileController extends Controller
     //         }
     //         $datas->save();
     //         $datas = [];
-    
-    
+
+
     //         if (($open = fopen(public_path() . '/uploads' . '/' . $name, "r")) !== FALSE) {
     //             $k = 0;
     //             while ($data = fgetcsv($open, 9000, ",")) {
@@ -452,7 +709,6 @@ class FileController extends Controller
     //                     );
     //                 $eid = DB::table('expense')->insertGetId($edata);
     //                 Session::put('elastinsertid', $eid);
-    
     //                 $e1data =
     //                     array(
     //                         "exp_id" => Session::get('elastinsertid'),
@@ -484,7 +740,6 @@ class FileController extends Controller
     //                         "Customers" => $data[172],
     //                         // "dummy_date" => '01-'.$cdate
     //                     );
-    
     //                 DB::table('Customer')->insert($custdata);
     //             } else {
     //                 DB::table('Revenue')->where('Date', $cdate)
@@ -496,7 +751,6 @@ class FileController extends Controller
     //                 );
     //                 DB::table('Cogsdata')->where('data_id', $rev[0]->id)->where('Date', $cdate)
     //                     ->where('Location', $dataa['Location'])->update($fdataa);
-    
     //                 $edata =
     //                     array(
     //                         'data_id' => $rev[0]->id,
@@ -521,14 +775,14 @@ class FileController extends Controller
     //                         "InternetOnline" => $data[49],
     //                         "AdvertisingandPromotionOther" => $data[50], "SpecialEvents" => $data[51], "Website" => $data[52], "CashShortLong" => $data[53], 'VINSearchFees' => $data[54], 'InternalPostage' => $data[55], 'AdministrativeCollections' => $data[56], 'OtherSellingExpensesOther' => $data[57], 'SellingExpenseOther' => $data[58], 'BadChecks' => $data[59], 'NSFCheckFees' => $data[60], 'BankCardFees' => $data[61], 'BankServiceCharges' => $data[62], 'LateFees' => $data[63], 'BankChargesOther' => $data[64], 'GeneralAdminExpenseOther' => $data[65], 'LegalFees' => $data[66], 'AccountingFees' => $data[67], 'ConsultingFees' => $data[68], 'ProfessionalFeesOther' =>  $data[69], 'PropertyGeneralLiability' => $data[70], 'OfficersLife' => $data[71], 'InsuranceExpenseAdminOther' =>  $data[72], 'OfficeSupplies' => $data[73], 'Postage' => $data[74], 'Freight' => $data[75], 'GeneralSupplies' =>  $data[76], 'PostageFreightSuppliesOther' =>  $data[77], 'RentExpense' =>  $data[78], 'Utilities' => $data[79], 'PropertyInsurance' => $data[80], 'Security' => $data[81], 'PestControl' => $data[82], 'RepairMaintenancBuilding' =>  $data[83], 'RelocationExpenses' =>  $data[84], 'OccupancyExpenseOther' => $data[85], 'RepairsMaintenanceEquip' => $data[86], 'EquipmentRental' => $data[87], 'EquipmentExpenseOther' => $data[88], 'DepreciationExpenseFFE' => $data[89], 'AmortizationExpense' => $data[90], 'RepairMaintenanceVehicles' => $data[91], 'FuelOilVehicle' =>  $data[92], 'LeaseVehicle' => $data[93], 'VehicleInsurance' => $data[94], 'VehicleLicenses' => $data[95], 'VehicleExpenseOther' => $data[96], 'DepreciationExpense' => $data[97]
     //                     );
-    
-    
+
+
     //                 DB::table('expense')->where('data_id', $rev[0]->id)->where('Date', $cdate)
     //                     ->where('Location', $dataa['Location'])->update($edata);;
     //                 $c = DB::table('expense')->where('data_id', $rev[0]->id)->where('Date', $cdate)
     //                     ->where('Location', $dataa['Location'])->get();
-    
-    
+
+
     //                 $e1data =
     //                     array(
     //                         "exp_id" => isset($c[0]->id) ? $c[0]->id : null,
@@ -556,10 +810,10 @@ class FileController extends Controller
     //                         'TravelEntertainmentOther' => $data[117],
     //                         'DuesDeductible' => $data[118], 'DuesNonDeductible' => $data[119], 'DuesSubscriptionsOther' => $data[120], 'FFCRATaxes' => $data[121], 'UnemploymentTaxes' => $data[122], 'FICAMatch' => $data[123], 'PayrollTaxesOther' => $data[124], 'RetirementBenefits' => $data[125], 'GroupHealthLifeInsurance' => $data[126], 'WorkerCompensation' => $data[127], 'InsuranceExpenseEmployeeOther' => $data[128], 'MedicalExpenses' => $data[129], 'EmployeeProcurement' => $data[130], 'DrugScreening' => $data[131], 'EmployeeMovingExpense' => $data[132], 'SeminarsEducation' => $data[133], 'EmployeeTraining' => $data[134], 'Uniforms' => $data[135], 'AwardsGifts' => $data[136], 'Banquet' => $data[137], 'SpecialEvents' => $data[138], 'LeasedEmployees' => $data[139], 'MovingExpenseAdministrative' => $data[140], 'OtherEmployeeExpenseOther' => $data[141], 'PayrollExpensesOther' => $data[142], 'FranchiseTax' => $data[143], 'PersonalProperty' => $data[144], 'RealEstate' => $data[145], 'SalesUseTax' => $data[146], 'WasteTiretax' => $data[147], 'MiscellaneousTax' => $data[148], 'BusinessLicensesPermits' => $data[149], 'FinesPenalties' => $data[150], 'RoyaltyFeesSherwood' => $data[151], 'RoyaltyFeesMabelvale' => $data[152], 'RoyaltyFeesConway' => $data[153], 'RoyaltyFeesFayetteville' => $data[154], 'RoyaltyFeesRogers' => $data[155], 'RoyaltyFeesDallas' => $data[156], 'RoyaltyFeesFtSmith' => $data[157], 'RoyaltyFeesAdmin' => $data[158], 'RoyaltyFeesOther' => $data[159], 'TaxLicensePermitExpenseOther' => $data[160], 'OperationalOverhead' => $data[161], 'Payoffs' => $data[175], 'otherIncome' => $data[164], 'purchasedisc' => $data[166]
     //                     );
-    
+
     //                 DB::table('expense1')->where('Date', $cdate)
     //                     ->where('Location', $dataa['Location'])->update($e1data);
-    
+
     //                 $custdata =
     //                     array(
     //                         'data_id' => $rev[0]->id,

@@ -9,9 +9,9 @@
 
 @if(Session::get('userrole') == 'Manager')
 @php
-$options= App\Models\Useraccess::where('user_id',Session::get('userloginid'))->get()->pluck('options')->toArray();
-if($options){
-$opt= $options[0];
+$options = App\Models\Useraccess::where('user_id', Session::get('userloginid'))->get()->pluck('options')->toArray();
+if ($options) {
+$opt = $options[0];
 }
 @endphp
 <script>
@@ -97,6 +97,8 @@ $opt= $options[0];
             scrollY: true,
             info: false,
             "searching": false,
+            "paging": false,
+            "scrollX": true
         });
     });
     $(document).ready(function() {
@@ -316,10 +318,15 @@ $opt= $options[0];
         $('.netincome :input[class="match"]').each(function() {
             var yaxes = $(this).val();
             ypositions.push(yaxes);
+            // console.log(ypositions);
         });
 
         var xValues = positions;
         var yValues = ypositions;
+
+
+        // console.log('x values: ' + xValues);
+        // console.log('y values: ' + ypositions);
 
         var customChartTitle = "{{ @$variable }}";
 
@@ -427,15 +434,14 @@ $opt= $options[0];
     var x = [];
     $('.revsum :input[class="keys"]').each(function() {
         var xaxis = $(this).val();
-
         x.push(xaxis);
-
+        // console.log(xaxis);
     });
     var y = [];
     $('.cust :input[class="customer"]').each(function() {
         var yaxis = $(this).val();
         y.push(yaxis);
-
+        // console.log(yaxis);
     });
     var xValues = x;
     var yValues = y;
@@ -861,9 +867,17 @@ $opt= $options[0];
 <script>
     $('#selectloc').on('change', function() {
         var location = $("#location").val();
-        if (location) {
-            $('#sbmit-btn').click();
+        var from = $("#from").val();
+        var to = $("#to").val();
+        if (location && from && to) {
+            $('#sbmit-btn').prop('disabled', false);
+        } else {
+            $('#sbmit-btn').prop('disabled', true);
         }
+    });
+
+    $(document).ready(function() {
+        $('#sbmit-btn').prop('disabled', true);
     });
 </script>
 
@@ -882,6 +896,8 @@ $opt= $options[0];
         });
         var xValues = positions;
         var yValues = ypositions;
+
+        var customChartTitlee3 = "{{ @$variable3 }}";
 
         // Create a plugin to display data values on bars
         const dataValuesPlugin = {
@@ -948,6 +964,11 @@ $opt= $options[0];
                 plugins: {
                     legend: {
                         display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: customChartTitlee3,
+                        color: 'white',
                     },
                     dataValues: {
                         display: false // Initially set to false
@@ -1019,9 +1040,8 @@ $opt= $options[0];
 
 <script>
     $(document).ready(function() {
-
-
         var ctx6 = document.getElementById("chart-pstdue").getContext("2d");
+        // console.log(ctx6);
         var positions = [];
         $('.revsum :input[class="keys"]').each(function() {
 
@@ -1144,6 +1164,8 @@ $opt= $options[0];
         var xValues = positions;
         var yValues = ypositions;
 
+        var customChartTitlee4 = "{{ @$variable4 }}";
+
         const dataValuesPlugin = {
             id: 'dataValues',
             afterDatasetsDraw(chart, args, options) {
@@ -1206,6 +1228,11 @@ $opt= $options[0];
                 plugins: {
                     legend: {
                         display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: customChartTitlee4,
+                        color: 'white',
                     },
                     dataValues: {
                         display: false // Initially set to false
@@ -1288,6 +1315,7 @@ $opt= $options[0];
         var xValues = positions;
         var yValues = ypositions;
 
+        var customChartTitlee2 = "{{ @$variable2 }}";
         const dataValuesPlugin = {
             id: 'dataValues',
             afterDatasetsDraw(chart, args, options) {
@@ -1351,6 +1379,11 @@ $opt= $options[0];
                 plugins: {
                     legend: {
                         display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: customChartTitlee2,
+                        color: 'white',
                     },
                     dataValues: {
                         display: false
@@ -1433,6 +1466,8 @@ $opt= $options[0];
         var xValues = positions;
         var yValues = ypositions;
 
+        var customChartTitlee1 = "{{ @$variable1 }}";
+
         const dataValuesPlugin = {
             id: 'dataValues',
             afterDatasetsDraw(chart, args, options) {
@@ -1496,7 +1531,12 @@ $opt= $options[0];
                     legend: {
                         display: false,
                     },
-                    dataValues: {
+                    title: {
+                        display: true,
+                        text: customChartTitlee1,
+                        color: 'white',
+                    },
+                    dataValues: { // Corrected placement
                         display: false
                     }
                 },
@@ -1550,7 +1590,7 @@ $opt= $options[0];
                     },
                 },
             },
-            plugins: [dataValuesPlugin]
+            plugins: [dataValuesPlugin] // Assuming dataValuesPlugin is defined elsewhere
         });
 
         $('#overtimePercentage').change(function() {
@@ -1560,6 +1600,229 @@ $opt= $options[0];
         });
     });
 </script>
+
+<!-- New code start here  -->
+<script>
+    $(document).ready(function() {
+        var ctx7 = document.getElementById("ideal-cust").getContext("2d");
+        var positions = [];
+        // console.log(ctx7);
+
+        $('.revsum :input[class="keys"]').each(function() {
+            var xaxes = $(this).val();
+            positions.push(xaxes);
+        });
+        // console.log(positions);
+        // return false;
+
+        var ypositions = [];
+        $('.idealcust :input[class="match"]').each(function() {
+            var yaxes = $(this).val();
+            console.log(yaxes);
+            ypositions.push(yaxes);
+        });
+        // console.log(ypositions);
+        // return false;
+
+        var xValues = positions;
+        var yValues = ypositions;
+
+        var customChartTitle7 = "{{ @$variable7 }}";
+        new Chart(ctx7, {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: "Ideal Cust",
+                    tension: 0,
+                    borderWidth: 0,
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                    pointBorderColor: "transparent",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderWidth: 4,
+                    backgroundColor: "transparent",
+                    fill: true,
+                    data: yValues,
+                    maxBarThickness: 6
+                }, ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: customChartTitle7,
+                        color: 'white',
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        var ctx8 = document.getElementById("ideal-agre").getContext("2d");
+        var positions = [];
+        console.log(ctx8);
+
+        $('.revsum :input[class="keys"]').each(function() {
+            var xaxes = $(this).val();
+            positions.push(xaxes);
+        });
+
+        var ypositions = [];
+        $('.idealagre :input[class="match"]').each(function() {
+            var yaxes = $(this).val();
+            ypositions.push(yaxes);
+        });
+
+        var xValues = positions;
+        var yValues = ypositions;
+
+        var customChartTitle8 = "{{ @$variable8 }}";
+        new Chart(ctx8, {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: "Ideal Agre",
+                    tension: 0,
+                    borderWidth: 0,
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                    pointBorderColor: "transparent",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderColor: "rgba(255, 255, 255, .8)",
+                    borderWidth: 4,
+                    backgroundColor: "transparent",
+                    fill: true,
+                    data: yValues,
+                    maxBarThickness: 6
+                }, ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: customChartTitle8,
+                        color: 'white',
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#f8f9fa',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    });
+</script>
+<!-- Code end here  -->
 
 <script>
     $(document).ready(function() {

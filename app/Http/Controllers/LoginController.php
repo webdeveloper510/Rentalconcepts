@@ -16,13 +16,18 @@ use App\Models\Directory;
 use App\Models\customer;
 use App\Models\Permission;
 use App\Models\Upload;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
-
 {
     public function login(Request $request)
     {
         return view('login');
+    }
+
+    public function accountingLogin(Request $request)
+    {
+        return view('accountinglogin');
     }
     public function loginvalidation(Request $request)
     {
@@ -53,6 +58,39 @@ class LoginController extends Controller
             return back()->with('error', "Email doesn't exist!");
         }
     }
+
+    public function accountingLoginValidation(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'password' => 'required',
+        ]);
+
+        $details = SiteUsers::select('*')->where('email', $request->input('name'))->get()->toArray();
+        // echo "<pre>";
+        // print_r($details);
+        // die;
+
+        if (!empty($details)) {
+
+            if (md5($request->input('password')) == $details[0]['password']) {
+
+                Session::put('loginid', $details[0]['id']);
+
+                Session::put('role', $details[0]['role']);
+
+                if ($details[0]['role'] == "Accounting Office") {
+                    return redirect('/accounting/dashboard');
+                } else {
+                    return back()->with('error', 'Wrong Login Credentials!');
+                }
+            } else {
+                return back()->with('error', 'Wrong Password!');
+            }
+        } else {
+            return back()->with('error', "Email doesn't exist!");
+        }
+    }
     public function dashboard()
     {
         if (Session::get('loginid')) {
@@ -62,111 +100,32 @@ class LoginController extends Controller
             return redirect('/admin');
         }
     }
+
+    public function accountingDashboard()
+    {
+        if (Session::get('loginid')) {
+            return view('accounting-dashboard');
+        } else {
+            return redirect('/accounting');
+        }
+    }
     public function logout()
     {
         Session::forget('loginid');
         return redirect('/admin');
     }
-    // public function userlogin()
-    // {
-    //     // echo "here";
 
-    //     // die;
-    //     if (session()->has('userloginid') && (session::get('userrole') == 'Manager' || session::get('userrole') == 'Director' || session::get('userrole') == 'Sales Manager')) {
-    //         $cal = array("status" => '1');
+    public function accountingLogout()
+    {
+        Session::forget('loginid');
+        return redirect('/accounting');
+    }
 
-    //         $location = DB::table('locations')
-    //             ->join('permissions', 'permissions.locationid', '=', 'locations.locationid')
-    //             ->where('permissions.allowed', 1)
-    //             ->where("permissions.userid", Session::get('userloginid'))
-    //             ->get()->toArray();
-    //         if (!($location)) {
-    //             Session::forget('userloginid');
-    //             return view('404');
-    //         } else {
-    //             $locpermitted = Permission::select('locationid')->where('userid', Session::get('userloginid'))->where('allowed', 1)->orderBy('locationid', 'ASC')->limit(1)->get()->toArray();
-    //             $defloc = DB::table('default_loc')->select('location')
-    //                 ->where('userid', Session::get('userloginid'))->get()->toArray();
-    //             if (!$defloc) {
-    //                 $loc  = $locpermitted[0]['locationid'];
-    //             } else {
-    //                 $loc = $defloc[0]->location;
-    //             }
-    //             $prevdate = date("m-Y", strtotime("first day of previous month"));
-    //             $prevyear = (explode("-", $prevdate));
-    //             $shwgraph = DB::table('Showgraph')->where('status', '1')->get()->pluck('id')->toArray();
-    //             $year = $prevyear[1];
-    //             $previousyear = $year - 1;
-    //             $previous = $prevyear[0] . "-" . $previousyear;
-    //             for ($i = 12; $i >= 1; $i--) {
-    //                 $months[] = date("m-Y", strtotime(date('Y-m-01') . " -$i months"));
-    //             }
-
-    //             $rev = [];
-    //             $cog = [];
-    //             $exp = [];
-    //             $grossp = [];
-    //             $netinc = [];
-    //             $pstdue = [];
-    //             // Data on submitting dates and location 
-    //             $sumrdata = round(revenuedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
-    //             $sumcdata = round(Cogsdata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
-    //             $esumm = expensedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
-    //             $esum1 = expensedata1::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
-    //             $gross = round($sumrdata - $sumcdata, 0);
-    //             $sumedata = round($esumm + $esum1, 0);
-    //             $netdata = round($gross - $sumedata, 0);
-    //             // Default Data 
-    //             $sumrdata1 = round(revenuedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
-    //             $sumcdata1 = round(Cogsdata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
-    //             $esumm1 = expensedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
-    //             $esum2 = expensedata1::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
-    //             $gross1 = round($sumrdata1 - $sumcdata1, 0);
-    //             $sumedata1 = round($esumm1 + $esum2, 0);
-    //             $netdata = round($gross1 - $sumedata1, 0);
-
-    //             // -------------------------------------PREVIOUS YEAR DATE DATA-------------------------------------
-    //             $prevsumrdata = round(revenuedata::where([['Location', '=', $loc], ['Date', '=', $previous]])->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
-    //             $prevsumcdata = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $previous]])->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
-    //             $prevesumm = expensedata::where([['Location', '=', $loc], ['Date', '=', $previous]])->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
-    //             $prevesum1 = expensedata1::where([['Location', '=', $loc], ['Date', '=', $previous]])->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
-    //             $prevgross = round($prevsumrdata - $prevsumcdata, 0);
-    //             $prevsumedata = round($prevesumm + $prevesum1, 0);
-    //             $prevnetdata = round($prevgross - $prevsumedata, 0);
-
-    //             if (!empty($months)) {
-    //                 foreach ($months as $key => $value) {
-    //                     $sumrevenuedata = round(revenuedata::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
-    //                     $cogsum = round(Cogsdata::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
-    //                     $pastdueacc = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('pastdueaccountchargeoff ')), 2);
-    //                     $expsumm = expensedata::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
-    //                     $expsum1 = expensedata1::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
-    //                     $custdata = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('Customers'));
-
-    //                     $grossprofitt = round($sumrevenuedata - $cogsum, 0);
-    //                     $exptotalsum = round($expsumm + $expsum1, 0);
-    //                     $netincomee = round($grossprofitt - $exptotalsum, 0);
-
-    //                     $rev[$key][$value] = $sumrevenuedata;
-    //                     $cog[$key][$value] = $cogsum;
-    //                     $exp[$key][$value] = $exptotalsum;
-    //                     $grossp[$key][$value] = $grossprofitt;
-    //                     $netinc[$key][$value] = $netincomee;
-    //                     $cust[$key][$value] = $custdata;
-    //                     $pstdue[$key][$value] = $pastdueacc;
-    //                 }
-    //             }
-    //             return view('master', compact('year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev',  'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue'));
-    //         }
-    //     } elseif (session()->has('userloginid') && session::get('userrole') == 'Sales Employee') {
-    //         $data = Upload::select('file')->get()->toArray();
-    //         return view('sales-training', compact('data'));
-    //     } else {
-    //         return view('user-login');
-    //     }
-    // }
     public function userlogin()
     {
+        // echo "userlogin";
+        // die;
+
         if (session()->has('userloginid') && (session::get('userrole') == 'Manager' || session::get('userrole') == 'Director' || session::get('userrole') == 'Sales Manager')) {
             $cal = array("status" => '1');
 
@@ -179,15 +138,19 @@ class LoginController extends Controller
                 Session::forget('userloginid');
                 return view('404');
             } else {
+                // echo "here";
+                // die;
                 $locpermitted = Permission::select('locationid')->where('userid', Session::get('userloginid'))->where('allowed', 1)->orderBy('locationid', 'ASC')->limit(1)->get()->toArray();
                 $defloc = DB::table('default_loc')->select('location')
                     ->where('userid', Session::get('userloginid'))->get()->toArray();
                 if (!$defloc) {
-                    $loc  = $locpermitted[0]['locationid'];
+                    $loc = $locpermitted[0]['locationid'];
                 } else {
                     $loc = $defloc[0]->location;
                 }
                 $prevdate = date("m-Y", strtotime("first day of previous month"));
+                // print($prevdate);
+                // die;
                 $prevyear = (explode("-", $prevdate));
                 $shwgraph = DB::table('Showgraph')->where('status', '1')->get()->pluck('id')->toArray();
                 $year = $prevyear[1];
@@ -197,12 +160,23 @@ class LoginController extends Controller
                     $months[] = date("m-Y", strtotime(date('Y-m-01') . " -$i months"));
                 }
 
+                $months = array_reverse(array: $months);
+
+                // echo "<pre>";
+                // print_r($months);
+                // die;
+
                 $rev = [];
                 $cog = [];
                 $exp = [];
                 $grossp = [];
                 $netinc = [];
                 $pstdue = [];
+
+                // new code added
+                $idlcust = [];
+                $idlagre = [];
+
                 // Data on submitting dates and location 
                 $sumrdata = round(revenuedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
                 $sumcdata = round(Cogsdata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
@@ -229,8 +203,16 @@ class LoginController extends Controller
                 $prevsumedata = round($prevesumm + $prevesum1, 0);
                 $prevnetdata = round($prevgross - $prevsumedata, 0);
 
+                // echo "<pre>";
+                // print_r($netinc);
+                // die;
+
                 if (!empty($months)) {
+                    // echo "month exists";
+                    // die;
                     foreach ($months as $key => $value) {
+                        // echo "working on foreach";
+                        // die;
                         $sumrevenuedata = round(revenuedata::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
                         $cogsum = round(Cogsdata::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
                         $pastdueacc = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('pastdueaccountchargeoff ')), 2);
@@ -238,9 +220,17 @@ class LoginController extends Controller
                         $expsum1 = expensedata1::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
                         $custdata = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('Customers'));
 
+                        // new code added 
+                        $idealCustData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealCust'));
+                        $idealAgreData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealAgre'));
+
                         $grossprofitt = round($sumrevenuedata - $cogsum, 0);
                         $exptotalsum = round($expsumm + $expsum1, 0);
                         $netincomee = round($grossprofitt - $exptotalsum, 0);
+
+                        // echo "<pre>";
+                        // print_r($netincomee);
+
 
                         $rev[$key][$value] = $sumrevenuedata;
                         $cog[$key][$value] = $cogsum;
@@ -249,8 +239,21 @@ class LoginController extends Controller
                         $netinc[$key][$value] = $netincomee;
                         $cust[$key][$value] = $custdata;
                         $pstdue[$key][$value] = $pastdueacc;
+
+                        // new code added 
+                        $idlcust[$key][$value] = $idealCustData;
+                        $idlagre[$key][$value] = $idealAgreData;
+
+                        // echo "<pre>";
+                        // print_r($netinc);
                     }
+                    // die;
                 }
+
+                // echo "<pre>";
+                // print_r($netinc);
+                // die;
+
                 // Find the maximum Net Income, its corresponding month and year, and the location
                 $maxNetIncome = null;
                 $maxMonthYear = null;
@@ -269,6 +272,10 @@ class LoginController extends Controller
                     'date' => $maxMonthYear,
                     'loc' => $loc,
                 ];
+
+                // echo "<pre>";
+                // print_r($graphdata);
+                // die;
 
                 $maxNetIncomeCust = null;
                 $maxMonthYearCust = null;
@@ -359,14 +366,63 @@ class LoginController extends Controller
                     'date' => $maxMonthYearCust,
                     'loc' => $loc,
                 ];
+
+                // new code added for ideal cust
+                $maxNetIncomeCust = null;
+                $maxMonthYearCust = null;
+
+                foreach ($idlcust as $locat => $monthData) {
+                    foreach ($monthData as $monthYear => $custData) {
+                        if ($maxNetIncomeCust === null || $custData > $maxNetIncomeCust) {
+                            $maxNetIncomeCust = $custData;
+                            $maxMonthYearCust = $monthYear;
+                        }
+                    }
+                }
+
+                $graphdata7 = [
+                    'maxinc' => number_format($maxNetIncomeCust, 2),
+                    'date' => $maxMonthYearCust,
+                    'loc' => $loc,
+                ];
+
+
+                // new code added for ideal agre
+                $maxNetIncomeCust = null;
+                $maxMonthYearCust = null;
+
+                foreach ($idlagre as $locat => $monthData) {
+                    foreach ($monthData as $monthYear => $custData) {
+                        if ($maxNetIncomeCust === null || $custData > $maxNetIncomeCust) {
+                            $maxNetIncomeCust = $custData;
+                            $maxMonthYearCust = $monthYear;
+                        }
+                    }
+                }
+
+                $graphdata8 = [
+                    'maxinc' => number_format($maxNetIncomeCust, 2),
+                    'date' => $maxMonthYearCust,
+                    'loc' => $loc,
+                ];
+
                 // echo "<pre>";
                 // print_r($graphdata);
                 // print_r($graphdata2);
                 // print_r($graphdata3);
                 // print_r($graphdata4);
                 // print_r($graphdata5);
+                // print_r($graphdata6);
+                // print_r($graphdata7);
+                // print_r($graphdata8);
                 // die;
-                return view('master', compact('year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev',  'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'graphdata', 'graphdata2', 'graphdata3', 'graphdata4', 'graphdata5', 'graphdata6'));
+
+                // echo "<pre>";
+                // print_r($netinc);
+                // die;
+
+
+                return view('master', compact('year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev', 'cog', 'exp', 'grossp', 'netinc', 'cust', 'idlcust', 'idlagre', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'graphdata', 'graphdata2', 'graphdata3', 'graphdata4', 'graphdata5', 'graphdata6', 'graphdata7', 'graphdata8'));
             }
         } elseif (session()->has('userloginid') && session::get('userrole') == 'Sales Employee') {
             $data = Upload::select('file')->get()->toArray();
@@ -377,7 +433,9 @@ class LoginController extends Controller
     }
     public function userdashboard(Request $request)
     {
-        // echo "ghelooo";
+
+        // echo "here";
+        // die;
         $validatedData = $request->validate([
             'name' => 'required',
             'password' => 'required',
@@ -388,7 +446,7 @@ class LoginController extends Controller
             if (md5($request->input('password')) == $details[0]['password']) {
                 Session::put('userloginid', $details[0]['id']);
                 Session::put('userrole', $details[0]['role']);
-                if (($details[0]['role'] == "Manager") || ($details[0]['role'] == "Director") || ($details[0]['role']  == 'Sales Manager')) {
+                if (($details[0]['role'] == "Manager") || ($details[0]['role'] == "Director") || ($details[0]['role'] == 'Sales Manager')) {
                     SiteUsers::where('id', Session::get('userloginid'))->update(['signedin' => '1']);
                     SiteUsers::where('id', Session::get('userloginid'))->increment('totalvisits', 1);
                     $fetch_id = base64_decode(Session::get('userloginid'));
@@ -406,7 +464,7 @@ class LoginController extends Controller
                         $defloc = DB::table('default_loc')->select('location')
                             ->where('userid', Session::get('userloginid'))->get()->toArray();
                         if (!$defloc) {
-                            $loc  = $locpermitted[0]['locationid'];
+                            $loc = $locpermitted[0]['locationid'];
                         } else {
                             $loc = $defloc[0]->location;
                         }
@@ -423,12 +481,23 @@ class LoginController extends Controller
                             $months[] = date("m-Y", strtotime(date('Y-m-01') . " -$i months"));
                         }
 
+                        $months = array_reverse(array: $months);
+
+                        // echo "<pre>";
+                        // print_r($months);
+                        // die;
+
                         $rev = [];
                         $cog = [];
                         $exp = [];
                         $grossp = [];
                         $netinc = [];
                         $pstdue = [];
+
+                        // Code added for IdealCust ande IdealAgre
+                        $idlcust = [];
+                        $idlagre = [];
+
                         $sumrdata1 = round(revenuedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
                         $sumcdata1 = round(Cogsdata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
                         $esumm1 = expensedata::where('Date', '=', $prevdate)->where('Location', '=', $loc)->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
@@ -456,6 +525,10 @@ class LoginController extends Controller
                                 $expsum1 = expensedata1::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
                                 $custdata = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('Customers'));
 
+                                // Code added for IdealCust ande IdealAgre
+                                $idealCustData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealCust'));
+                                $idealAgreData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealAgre'));
+
                                 $grossprofitt = round($sumrevenuedata - $cogsum, 0);
                                 $exptotalsum = round($expsumm + $expsum1, 0);
                                 $netincomee = round($grossprofitt - $exptotalsum, 0);
@@ -467,11 +540,19 @@ class LoginController extends Controller
                                 $netinc[$key][$value] = $netincomee;
                                 $cust[$key][$value] = $custdata;
                                 $pstdue[$key][$value] = $pastdueacc;
+
+                                // Code added for IdealCust ande IdealAgre
+                                $idlcust[$key][$value] = $idealCustData;
+                                $idlagre[$key][$value] = $idealAgreData;
                             }
                         }
 
+                        // echo "<pre>";
+                        // print_r($idlagre);
+                        // die;
+
                         if (Session::has('userloginid')) {
-                            return view('master', compact('year', 'previousyear', 'shwgraph', 'loc', 'location', 'pstdue', 'cal', 'prevdate', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev',  'cog', 'exp', 'grossp', 'netinc', 'months', 'custdata', 'sumrevenuedata', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata'));
+                            return view('master', compact('year', 'previousyear', 'shwgraph', 'loc', 'location', 'pstdue', 'cal', 'prevdate', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev', 'cog', 'exp', 'grossp', 'netinc', 'months', 'custdata', 'idlagre','idlcust', 'sumrevenuedata', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata'));
                         } else {
                             return redirect('/');
                         }
@@ -490,9 +571,19 @@ class LoginController extends Controller
             return back()->with('error', "Email doesn't exist!");
         }
     }
-    public function userlogout()
+    public function userlogout(Request $request)
     {
-        Session::forget('userloginid');
+        // Session::forget('userloginid');
+        // return redirect('/');
+        
+        // New code added
+        Auth::logout();
+    
+        // Clear the session in both main project and shared session folder
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();  
+    
+        // Redirect the user to the main project login page after logout
         return redirect('/');
     }
     public function changepswrd($id)
@@ -514,7 +605,7 @@ class LoginController extends Controller
         $data = SiteUsers::find(base64_decode($id));
         $password = $data->password;
 
-        if (md5($request->oldpassword) ==  $password) {
+        if (md5($request->oldpassword) == $password) {
             $data->password = md5($request->newpassword);
             $data->update();
             return back()->with('success', 'Password Updated Successfully!');
@@ -529,7 +620,7 @@ class LoginController extends Controller
         ]);
         $old = ini_set('memory_limit', '8192M');
 
-        $user = new  Loginuser;
+        $user = new Loginuser;
         $email = $request->input('email');
 
         $user1 = DB::table('siteusers')
@@ -550,7 +641,7 @@ class LoginController extends Controller
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= 'From: <rentalconcepts.net>' . "\r\n";
-                $to =  $email;
+                $to = $email;
 
                 $subject = "Change Password";
                 $message = 'Rental concepts site';
@@ -565,9 +656,26 @@ class LoginController extends Controller
     }
     public function calculation(Request $request)
     {
+
+        // echo "calculation";
+        // die;
         // echo "<pre>";
         // print_r($_REQUEST);
         // die;
+        // $data = $request->all();
+        // $date = $data['date']; 
+        // $loc = $data['location'];
+        // $prevyear = (explode("-", $date));
+        // $year = $prevyear[1];
+        // $previousyear = $year - 1;
+        // $previous = $prevyear[0] . "-" . $previousyear;
+
+        // for ($i = 12; $i >= 1; $i--) {
+        //     $months[] = date("m-Y", strtotime(date('Y-m-01') . " -$i months"));
+        // }
+
+        // print_r($months);
+        // echo "<pre>";
         $data = $request->all();
         $date = $data['date'];
         $loc = $data['location'];
@@ -575,9 +683,28 @@ class LoginController extends Controller
         $year = $prevyear[1];
         $previousyear = $year - 1;
         $previous = $prevyear[0] . "-" . $previousyear;
-        for ($i = 12; $i >= 1; $i--) {
-            $months[] = date("m-Y", strtotime(date('Y-m-01') . " -$i months"));
+        list($month, $year) = explode('-', $date);
+
+        // echo "month" . $month;
+        // echo "year" . $year;
+        // die;
+
+        $months = [];
+
+        for ($i = 0; $i < 12; $i++) {
+            $currentMonth = $month - $i;
+            $currentYear = $year;
+
+            if ($currentMonth <= 0) {
+                $currentMonth += 12;
+                $currentYear--;
+            }
+            $formattedDate = sprintf('%02d-%04d', $currentMonth, $currentYear);
+            $months[] = $formattedDate;
         }
+
+        // print_r($months);
+        // die;
 
         $rev = [];
         $cog = [];
@@ -586,22 +713,45 @@ class LoginController extends Controller
         $netinc = [];
         $pstdue = [];
 
+        // new code added
+        $idlcust = [];
+        $idlagre = [];
+
         $prevdate = date("m-Y", strtotime("first day of previous month"));
         $location = DB::table('locations')
             ->join('permissions', 'permissions.locationid', '=', 'locations.locationid')
             ->where('permissions.allowed', 1)
             ->where("permissions.userid", Session::get('userloginid'))
             ->get()->toArray();
+
+        // echo "<pre>";
+        // print_r($location);
+        // die;
+
         $cal = array("status" => '0');
         $shwgraph = DB::table('Showgraph')->where('status', '1')->get()->pluck('id')->toArray();
+
         // --------------------------------------SELECTED DATE DATA-------------------------------------
         $sumrdata = round(revenuedata::where([['Location', '=', $loc], ['Date', '=', $date]])->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
         $sumcdata = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $date]])->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
+
+        // echo $loc;
+        // echo $date;
+        // die;
+
         $esumm = expensedata::where([['Location', '=', $loc], ['Date', '=', $date]])->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
         $esum1 = expensedata1::where([['Location', '=', $loc], ['Date', '=', $date]])->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
+        // echo "<pre>";
+        // print_r($esum1);
+        // die;
+
         $gross = round($sumrdata - $sumcdata, 0);
         $sumedata = round($esumm + $esum1, 0);
+        // echo $sumedata;
+        // die;
+
         $netdata = round($gross - $sumedata, 0);
+
 
         // -------------------------------------PREVIOUS YEAR DATE DATA-------------------------------------
         $prevsumrdata1 = round(revenuedata::where([['Location', '=', $loc], ['Date', '=', $previous]])->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
@@ -616,10 +766,19 @@ class LoginController extends Controller
             foreach ($months as $key => $value) {
                 $sumrevenuedata = round(revenuedata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('SalesTaxColl + RentalIncome + CashSales + CashSalesNoninventory +EarlyPurchaseOption +RollPro + CollectionFeeInHouse + ReinstatementFees + OtherFeesAlignments + OneTimeFees + NSFCheckFees + OtherMiscellaneousIncome + SalesTaxCollected + RollSafe + Chargebacks + ManagementFee + SubfranchiseeRoyaltyIncome')), 0);
                 $cogsum = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('depreciation_inventory + paidout_epocharge + cashsalechargeoffs + skipstolenchargeoffs + insurancechargeoffs + returneddamagednonrepairable + nonrepairablechargeoffs + otherchargeoff + pastdueaccountchargeoff + inventorycostadjustment + chargeoffexpenseother + clubremittance+ rentrefunds +partsinventoryrepair + laborinventoryrepair + inventoryrepairother')), 0);
+                // echo "<pre>";
+                // print_r($cogsum);
+                // die;
+
                 $pastdueacc = round(Cogsdata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('pastdueaccountchargeoff ')), 2);
                 $expsumm = expensedata::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('RadioAdmin + TelevisionAdvertising + RadioTVProduction + PrintMedia + PrintProduction + PostageAdvertising + FreightAdvertising + NewspaperMagazineAdvertising + OtherPrint + TelephoneDirectories + MarqueeBillboards + CustomerReferrals+ WebsiteDevelopment +Sponsorships + InternetOnline+ AdvertisingandPromotionOther + SpecialEvents + Website + CashShortLong + VINSearchFees + InternalPostage + AdministrativeCollections + OtherSellingExpensesOther + SellingExpenseOther + BadChecks + NSFCheckFees + BankCardFees + BankServiceCharges + LateFees+GeneralAdminExpenseOther+LegalFees+AccountingFees+ConsultingFees+ProfessionalFeesOther+PropertyGeneralLiability+OfficersLife+InsuranceExpenseAdminOther+OfficeSupplies+Postage+Freight+GeneralSupplies+PostageFreightSuppliesOther+RentExpense+Utilities+PropertyInsurance+Security+PestControl+RepairMaintenancBuilding+RelocationExpenses+OccupancyExpenseOther+RepairsMaintenanceEquip+EquipmentRental+EquipmentExpenseOther+DepreciationExpenseFFE+AmortizationExpense+RepairMaintenanceVehicles+FuelOilVehicle+LeaseVehicle+VehicleInsurance+VehicleLicenses+VehicleExpenseOther+DepreciationExpense'));
                 $expsum1 = expensedata1::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('CharitableContributions + CustomerSettlements + OtherOther	 + Softwarelicensefees + ComputerSupplies + ComputerMaintenanceRepair + TelephoneCommunications + ComputerInternetExpensesOther + MiscellaneousExpense + Salary + TotalHourly + Overtimehourly+ Holiday +Bonus + BonusReimbursementDue + SalariesWagesOther + MileageReimbursement + TravelExpense + MealsEntertainment + TravelEntertainmentOther + DuesDeductible + DuesNonDeductible + DuesSubscriptionsOther + FFCRATaxes + UnemploymentTaxes + FICAMatch + PayrollTaxesOther + RetirementBenefits + GroupHealthLifeInsurance + WorkerCompensation + InsuranceExpenseEmployeeOther + MedicalExpenses + EmployeeProcurement + DrugScreening + EmployeeMovingExpense + SeminarsEducation + EmployeeTraining + Uniforms + AwardsGifts +Banquet +SpecialEvents +LeasedEmployees +MovingExpenseAdministrative +OtherEmployeeExpenseOther + PayrollExpensesOther + FranchiseTax + PersonalProperty + RealEstate +SalesUseTax + WasteTiretax + MiscellaneousTax +BusinessLicensesPermits +FinesPenalties + RoyaltyFeesSherwood +RoyaltyFeesMabelvale +RoyaltyFeesConway +RoyaltyFeesFayetteville +RoyaltyFeesRogers + RoyaltyFeesDallas+RoyaltyFeesFtSmith +RoyaltyFeesAdmin +RoyaltyFeesOther +TaxLicensePermitExpenseOther+ OperationalOverhead '));
                 $custdata = customer::where([['Location', '=', $loc], ['Date', '=', $value]])->sum(DB::raw('Customers'));
+
+                // new code added 
+                $idealCustData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealCust'));
+                $idealAgreData = customer::where('Date', '=', $value)->where('Location', '=', $loc)->sum(DB::raw('IdealAgre'));
+
                 $grossprofitt = round($sumrevenuedata - $cogsum, 0);
                 $exptotalsum = round($expsumm + $expsum1, 0);
                 $netincomee = round($grossprofitt - $exptotalsum, 0);
@@ -631,6 +790,10 @@ class LoginController extends Controller
                 $netinc[$key][$value] = $netincomee;
                 $cust[$key][$value] = $custdata;
                 $pstdue[$key][$value] = $pastdueacc;
+
+                // new code added 
+                $idlcust[$key][$value] = $idealCustData;
+                $idlagre[$key][$value] = $idealAgreData;
             }
         }
         $maxNetIncome = null;
@@ -740,7 +903,51 @@ class LoginController extends Controller
             'date' => $maxMonthYearCust,
             'loc' => $loc,
         ];
-        return view('master', compact('year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust',  'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue', 'graphdata', 'graphdata2', 'graphdata3', 'graphdata4', 'graphdata5', 'graphdata6'));
+
+        // new code added for ideal cust
+        $maxNetIncomeCust = null;
+        $maxMonthYearCust = null;
+
+        foreach ($idlcust as $locat => $monthData) {
+            foreach ($monthData as $monthYear => $custData) {
+                if ($maxNetIncomeCust === null || $custData > $maxNetIncomeCust) {
+                    $maxNetIncomeCust = $custData;
+                    $maxMonthYearCust = $monthYear;
+                }
+            }
+        }
+
+        $graphdata7 = [
+            'maxinc' => number_format($maxNetIncomeCust, 2),
+            'date' => $maxMonthYearCust,
+            'loc' => $loc,
+        ];
+
+
+        // new code added for ideal agre
+        $maxNetIncomeCust = null;
+        $maxMonthYearCust = null;
+
+        foreach ($idlagre as $locat => $monthData) {
+            foreach ($monthData as $monthYear => $custData) {
+                if ($maxNetIncomeCust === null || $custData > $maxNetIncomeCust) {
+                    $maxNetIncomeCust = $custData;
+                    $maxMonthYearCust = $monthYear;
+                }
+            }
+        }
+
+        $graphdata8 = [
+            'maxinc' => number_format($maxNetIncomeCust, 2),
+            'date' => $maxMonthYearCust,
+            'loc' => $loc,
+        ];
+
+        // echo "<pre>";
+        // print_r($graphdata7);
+        // print_r($graphdata8);
+        // die;
+        return view('master', compact('year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust', 'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue', 'graphdata', 'graphdata2', 'graphdata3', 'graphdata4', 'graphdata5', 'graphdata6', 'graphdata7', 'graphdata8', 'idlcust', 'idlagre'));
     }
     public function error()
     {
@@ -749,7 +956,7 @@ class LoginController extends Controller
     public function viewdirectorydata()
     {
         if (Session::has('userloginid')) {
-            $datas =  Directory::all();
+            $datas = Directory::all();
             return view('viewdirectorydata', compact('datas'));
         } else {
             return redirect('/');
@@ -926,6 +1133,6 @@ class LoginController extends Controller
             'date' => $maxMonthYear,
             'loc' => $loc,
         ];
-        return view('highlight', compact('year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust',  'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue', 'graphdata'));
+        return view('highlight', compact('year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust', 'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue', 'graphdata'));
     }
 }

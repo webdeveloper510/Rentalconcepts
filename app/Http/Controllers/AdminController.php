@@ -408,7 +408,8 @@ class AdminController extends Controller
 
     public function permissions(Request $request)
     {
-        $location = Location::all();
+        // $location = Location::all();
+        $location = Location::orderBy('locationid')->get();
         $userdata = SiteUsers::where('role', '!=', 'Super admin')->get();
         if (Session::has('loginid')) {
             return view('permissions', compact('userdata', 'location'));

@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href=" {{url('/admin/dashboard')}} " target="_blank">
       <img src="{{ URL::asset('public/asset/assets/img/RNR_round_clr-flat.png')}}" class="navbar-brand-img h-100" alt="main_logo">
+=======
+<aside
+  class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+  id="sidenav-main">
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+      aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand m-0" href=" {{url('/admin/dashboard')}} " target="_blank">
+      <img src="{{ URL::asset('public/asset/assets/img/RNR_round_clr-flat.png')}}" class="navbar-brand-img h-100"
+        alt="main_logo">
+>>>>>>> 0b37fa62 (New code added)
       <span class="ms-1 font-weight-bold text-white">Admin Panel</span>
     </a>
 
@@ -73,6 +85,29 @@
           </li>
         </ul>
       </li>
+<<<<<<< HEAD
+=======
+      <!-- ADD REPORT CODE START HERE -->
+      <li class="nav-item  submenu list">
+        <a class="nav-link text-white menu" href="{{url('admin/add-daily-report')}}">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-plus opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Add Daily Report</span>
+        </a>
+        <ul>
+          <li class="nav-item list">
+            <a class="nav-link text-white menu" href="{{url('/admin/view-daily-report')}}">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fa fa-database" aria-hidden="true"></i>
+              </div>
+              <span class="nav-link-text ms-1">View Daily Report</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- CODE END HERE -->
+>>>>>>> 0b37fa62 (New code added)
       <li class="nav-item submenu list">
         <a class="nav-link text-white menu " href="{{url('admin/directory')}}">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -136,7 +171,11 @@
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fa fa-info-circle" aria-hidden="true"></i>
           </div>
+<<<<<<< HEAD
           <span class="nav-link-text ms-1">Details</span>
+=======
+          <span class="nav-link-text ms-1">Download</span>
+>>>>>>> 0b37fa62 (New code added)
         </a>
         <ul>
           <li class="nav-item list">
@@ -144,7 +183,11 @@
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fa fa-folder" aria-hidden="true"></i>
               </div>
+<<<<<<< HEAD
               <span class="nav-link-text ms-1">View Details</span>
+=======
+              <span class="nav-link-text ms-1">View Downloads</span>
+>>>>>>> 0b37fa62 (New code added)
             </a>
           </li>
         </ul>
@@ -167,6 +210,10 @@
         <ul>
         </ul>
       </li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b37fa62 (New code added)
       <li class="nav-item list">
         <a class="nav-link text-white menu" href="{{ url('admin/company-access') }}">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

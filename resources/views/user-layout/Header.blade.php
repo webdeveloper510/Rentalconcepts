@@ -9,7 +9,12 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!--     Fonts and icons     -->
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+=======
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+>>>>>>> 0b37fa62 (New code added)
     <!-- Nucleo Icons -->
     <link href="{{ URL::asset('public/asset/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
     <link href="{{ URL::asset('public/asset/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
@@ -18,16 +23,31 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
     <!-- CSS Files -->
+<<<<<<< HEAD
     <link id="pagestyle" href="{{ URL::asset('public/asset/assets/css/material-dashboard.css?v=3.0.2')}}" rel="stylesheet" />
+=======
+    <link id="pagestyle" href="{{ URL::asset('public/asset/assets/css/material-dashboard.css?v=3.0.2')}}"
+        rel="stylesheet" />
+>>>>>>> 0b37fa62 (New code added)
     <!-- Favicons -->
     <link href="{{URL::asset('public/front-end/assets/img/RNR_round_clr-flat.png')}}" rel="icon">
     <link href="{{URL::asset('public/front-end/assets/img/RNR_round_clr-flat.png')}}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+=======
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+>>>>>>> 0b37fa62 (New code added)
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Template Main CSS File -->
@@ -213,6 +233,7 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
         <a href="{{url('user/view-currentdata')}}" class="nav-link " style=" color: azure;">Customer</a>
         <a href="{{url('users/company')}}" class="nav-link " style=" color: azure;">Company</a>
+<<<<<<< HEAD
         <a href="{{url('user/view-details')}}" class="nav-link " style=" color: azure;">Details</a>
         <a href="{{url('user/view-expectations')}}" class="nav-link " style=" color: azure;">Expectations</a>
     </div>
@@ -322,6 +343,146 @@
                 @endif
                 <li class="nav-item"><a style="color: azure" href="{{url('/changepswrd/'.$loginid)}}" class="nav-link">Change Password</a></li>
                 <li class="nav-item"><a href="{{url('/userlogout')}}" class="nav-link active">Logout<i class="fa fa-sign-in text-white" style="font-size:18px" aria-hidden="true"></i></a></li>
+=======
+        <a href="{{url('user/view-details')}}" class="nav-link " style=" color: azure;">Downloads</a>
+        <a href="{{url('user/view-expectations')}}" class="nav-link " style=" color: azure;">Expectations</a>
+    </div>
+    <nav class="navbar navbar-expand-lg" style="background-color:#8f2f2f;height: 67px;width: 117%;">
+        <div class="container-fluid">
+            <ul class="navbar-nav" id="myTopnav">
+                @php
+                    $loginid = base64_encode(Session::get('userloginid'));
+                @endphp
+                @if(Session::get('userrole') == 'Sales Employee')
+                    <li class="nav-item"> <a href="{{url('/user/sales-training')}}" class="nav-link "
+                            style=" color: azure;">Sales Training</a></li>
+                    <li class="nav-item"> <a href="{{url('/view-directory')}}" class="nav-link "
+                            style=" color: azure;">View-Directory</a></li>
+                @elseif(Session::get('userrole') == 'Sales Manager')
+                    <li class="nav-item" style="display: flex;padding:15px;"><a href="{{url('/')}}" class="nav-link"
+                            style=" color: azure;"><b>Home</b></a> </li>
+                    <li class="nav-item"><a href="{{url('/video-upload')}}" class="nav-link " style=" color: azure;">Sales
+                            Training</a></li>
+                @elseif(Session::get('userrole') == 'Director')
+                    <li class="nav-item" style="display: flex;">
+                        <a href="{{url('/')}}" class="nav-link" style=" color: azure;"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item"> <a href="{{url('/user/profit-loss-statements')}}" class="nav-link "
+                            style=" color: azure;">Profit/Loss</a></li>
+                    <li class="nav-item"> <a href="{{url('user/ratio')}}" class="nav-link "
+                            style=" color: azure;">Ratios</a></li>
+                    <li class="nav-item"> <a href="{{url('user/trends')}}" class="nav-link "
+                            style=" color: azure;">Trends</a></li>
+                    <li class="nav-item submenu">
+                        <a class="nav-link " style=" color: azure;">YTD</a>
+                        <ul class="drop-down">
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{url('user/ytdcompare')}}">
+                                    <span class="nav-link-text ms-1B ">YTD ANALYSIS</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{url('user/ytddate')}}">
+                                    <span class="nav-link-text ms-1B ">YTDATE</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item submenu">
+                        <a class="nav-link " style=" color: azure;">Stats</a>
+                        <ul class="drop-down">
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{url('user/view-stats')}}">
+                                    <span class="nav-link-text ms-1B ">STATS</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statscustomer')}}">
+                                    <span class="nav-link-text ms-1B ">CUSTOMER</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statsincome')}}">
+                                    <span class="nav-link-text ms-1B ">INCOME</span>
+                                </a>
+
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statsgrowth')}}">
+                                    <span class="nav-link-text ms-1B ">Growth</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statscogs')}}">
+                                    <span class="nav-link-text ms-1B ">COGS</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link text-white " href="{{route('statgross')}}">
+                                    <span class="nav-link-text ms-1B ">Gross Profit</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statexp')}}">
+                                    <span class="nav-link-text ms-1B ">Expenses</span>
+                                </a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link text-white " href="{{route('statnet')}}">
+                                    <span class="nav-link-text ms-1B ">Net Income</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a href="{{url('user/view-currentdata')}}" class="nav-link "
+                            style=" color: azure;">Customer</a></li>
+                    <li class="nav-item"> <a href="{{url('users/company')}}" class="nav-link "
+                            style=" color: azure;">Company</a></li>
+                    <li class="nav-item"> <a href="{{url('user/view-details')}}" class="nav-link "
+                            style=" color: azure;">Downloads</a></li>
+                    <li class="nav-item"> <a href="{{url('user/view-expectations')}}" class="nav-link "
+                            style=" color: azure;">Expectations</a></li>
+                    <li class="nav-item"> <a href="{{url('user/regions')}}" class="nav-link "
+                            style=" color: azure;">Areas</a></li>
+                    <li class="nav-item"> <a href="{{url('/view-directory')}}" class="nav-link "
+                            style=" color: azure;">View-Directory</a></li>
+                @elseif(Session::get('userrole') == 'Manager')
+                    <li class="nav-item" style="display: flex;"> <a href="{{url('/')}}" class="nav-link"
+                            style=" color: azure;"><b>Home</b></a></li>
+                    <li class="nav-item man"> <a href="{{ url('/highlights') }}" class="nav-link "
+                            style=" color: azure;">Highlights</a></li>
+                    <li class="nav-item man"> <a href="{{url('/user/profit-loss-statements')}}" class="nav-link "
+                            style=" color: azure;">Profit-Loss</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/ratio')}}" class="nav-link "
+                            style=" color: azure;">Ratios</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/trends')}}" class="nav-link "
+                            style=" color: azure;">Trends</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/view-details')}}" class="nav-link "
+                            style=" color: azure;">Downloads</a></li>
+
+                    <!-- <li class="nav-item"> <a href="#" class="nav-link" style="color: azure;">Stats</a></li> -->
+
+                    <li class="nav-item man"> <a href="{{url('user/view-expectations')}}" class="nav-link "
+                            style=" color: azure;">Expectations</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/regions')}}" class="nav-link "
+                            style=" color: azure;">Areas</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/region-new')}}" class="nav-link"
+                            style=" color: azure;">Region</a></li>
+                    <li class="nav-item man"> <a href="{{url('/view-directory')}}" class="nav-link "
+                            style=" color: azure;">View-Directory</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/presentation')}}" class="nav-link "
+                            style=" color: azure;">Company</a></li>
+                    <li class="nav-item man"> <a href="{{url('user/bonus')}}" class="nav-link "
+                            style=" color: azure;">Bonus</a></li>
+                    <li class="nav-item man"> <a href="{{url('/daily-stats')}}" class="nav-link "
+                            style=" color: azure;">Daily Stats</a></li>
+                @endif
+                <li class="nav-item"><a style="color: azure" href="{{url('/changepswrd/' . $loginid)}}"
+                        class="nav-link">Change Password</a></li>
+                <li class="nav-item"><a href="{{url('/userlogout')}}" class="nav-link active">Logout<i
+                            class="fa fa-sign-in text-white" style="font-size:18px" aria-hidden="true"></i></a></li>
+>>>>>>> 0b37fa62 (New code added)
             </ul>
         </div>
     </nav>

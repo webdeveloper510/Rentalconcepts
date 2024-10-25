@@ -19,6 +19,8 @@ use App\Http\Controllers\PrintController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AccessController;
+use App\Http\Controllers\DailyReportController;
+use App\Http\Controllers\ITHelpController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +40,15 @@ Route::get('/logout', [LoginController::class, "logout"]);
 Route::get('/', [LoginController::class, "userlogin"]);
 Route::post('/', [LoginController::class, "userdashboard"]);
 Route::get('/userlogout', [LoginController::class, "userlogout"]);
+
+// --------------------- ACCOUNTING ALL ROUTES -------------------------------------
+Route::get('/accounting', [LoginController::class, "accountingLogin"]);
+Route::post('/accounting', [LoginController::class, "accountingLoginValidation"]);
+Route::get('/accounting/dashboard', [LoginController::class, "accountingDashboard"]);
+Route::get('/accounting/logout', [LoginController::class, "accountingLogout"]);
+
+// --------------------- IT HELP ALL ROUTES -------------------------------------
+Route::get('/accounting/it-help', [ITHelpController::class, "itHelp"]);
 
 // ---------------------- USER CHANGE & FORGET PASSWORD------------------------------
 Route::get('/changepswrd/{id}', [LoginController::class, "changepswrd"]);
@@ -111,7 +122,7 @@ Route::post('/ytdate', [LoginController::class, "ytdcalculation"]);
 
 // ---------------------- DATABASE------------------------------
 
-Route::any('adminer', '\Aranyasen\LaravelAdminer\AdminerAutologinController@index');
+// Route::any('adminer', '\Aranyasen\LaravelAdminer\AdminerAutologinController@index');
 
 // ---------------------- ADD DIRECTORY------------------------------
 Route::get('admin/directory', [AdminController::class, "directory"]);
@@ -222,3 +233,11 @@ Route::post('user/bonus', [AccessController::class, "bonus_calculation"]);
 
 Route::get('/highlights', [AccessController::class, "highlight"]);
 Route::post('/highlights', [LoginController::class, "calculation_highlight"]);
+
+Route::get('/daily-stats', [AccessController::class, "daily_stats"]);
+
+
+// ROUTES FOR DAILY REPORT 
+Route::get('/admin/add-daily-report', [DailyReportController::class, "index"]);
+Route::post('/admin/upload-daily-report', [DailyReportController::class, "uploadDailyReport"]);
+Route::get('/admin/view-daily-report', [DailyReportController::class, "viewDailyReport"]);

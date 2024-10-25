@@ -17,6 +17,7 @@ use App\Models\expensedata;
 use App\Models\Permission;
 use App\Models\expensedata1;
 use App\Models\Company_access;
+use App\Models\DailyReport;
 use LDAP\Result;
 
 class AccessController extends Controller
@@ -24,7 +25,7 @@ class AccessController extends Controller
     public function index()
     {
         if (Session::has('loginid')) {
-            $title = ['Profit-Loss', 'Highlights', 'Ratios', 'Trends', 'Details', 'Expectations', 'Areas', 'Region', 'View-Directory', 'Company', 'Bonus'];
+            $title = ['Profit-Loss', 'Highlights', 'Ratios', 'Trends', 'Downloads', 'Expectations', 'Areas', 'Region', 'View-Directory', 'Company', 'Bonus', 'Daily Stats'];
             $users = SiteUsers::where('role', 'Manager')->get();
             $checked = Useraccess::select('*')->get()->toArray();
             return view('page_access', compact('users', 'title', 'checked'));
@@ -69,7 +70,7 @@ class AccessController extends Controller
             for ($i = 0; $i < count($location); $i++) {
                 for ($j = 0; $j < count($prev_date); $j++) {
                     $revenue1[] = revenuedata::where('Location', '=', $location[$i]->locationid)->where('Date', $prev_date[$j])->get()->toArray();
-                    $cogs1[] =  Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $prev_date[$j])->get()->toArray();
+                    $cogs1[] = Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $prev_date[$j])->get()->toArray();
                     $sumedata1[] = DB::table('expense')
                         ->join('expense1', 'expense.id', '=', 'expense1.exp_id')->where('expense.Location', '=', $location[$i]->locationid)
                         ->where('expense.Date', $prev_date[$j])->select('expense.*', 'expense1.*')->get()->toArray();
@@ -80,7 +81,7 @@ class AccessController extends Controller
             foreach ($revenue1 as $value) {
                 foreach ($value as $val) {
                     if (isset($result[$val['Date']])) {
-                        $result[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] +  $val['RollPro']
+                        $result[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] + $val['RollPro']
                             + $val['CollectionFeeInHouse'] + $val['ReinstatementFees'] + $val['OtherFeesAlignments'] + $val['OneTimeFees'] + $val['NSFCheckFees'] + $val['OtherMiscellaneousIncome']
                             + $val['SalesTaxCollected'] + $val['RollSafe'] + $val['Chargebacks'] + $val['ManagementFee'] + $val['SubfranchiseeRoyaltyIncome']);
                     } else {
@@ -96,7 +97,7 @@ class AccessController extends Controller
                 foreach ($value as $val) {
                     if (isset($cog[$val['Date']])) {
                         $cog[$val['Date']] += ($val['depreciation_inventory'] + $val['paidout_epocharge'] + $val['skipstolenchargeoffs'] +
-                            $val['insurancechargeoffs'] + $val['returneddamagednonrepairable'] +  $val['otherchargeoff'] + $val['pastdueaccountchargeoff'] +
+                            $val['insurancechargeoffs'] + $val['returneddamagednonrepairable'] + $val['otherchargeoff'] + $val['pastdueaccountchargeoff'] +
                             $val['inventorycostadjustment'] + $val['clubremittance'] + $val['rentrefunds'] + $val['chargeoffexpenseother'] + $val['partsinventoryrepair']);
                     } else {
                         $cog[$val['Date']] = ($val['depreciation_inventory'] + $val['paidout_epocharge'] + $val['skipstolenchargeoffs'] +
@@ -154,7 +155,7 @@ class AccessController extends Controller
             for ($i = 0; $i < count($location); $i++) {
                 for ($j = 0; $j < count($month); $j++) {
                     $revenue[] = revenuedata::where('Location', '=', $location[$i]->locationid)->where('Date', $month[$j])->get()->toArray();
-                    $cogsdata[] =  Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $month[$j])->get()->toArray();
+                    $cogsdata[] = Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $month[$j])->get()->toArray();
                     $expdata[] = DB::table('expense')
                         ->join('expense1', 'expense.id', '=', 'expense1.exp_id')->where('expense.Location', '=', $location[$i]->locationid)
                         ->where('expense.Date', $month[$j])->select('expense.*', 'expense1.*')->get()->toArray();
@@ -163,7 +164,7 @@ class AccessController extends Controller
             foreach ($revenue as $value) {
                 foreach ($value as $val) {
                     if (isset($rev[$val['Date']])) {
-                        $rev[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] +  $val['RollPro']
+                        $rev[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] + $val['RollPro']
                             + $val['CollectionFeeInHouse'] + $val['ReinstatementFees'] + $val['OtherFeesAlignments'] + $val['OneTimeFees'] + $val['NSFCheckFees'] + $val['OtherMiscellaneousIncome']
                             + $val['SalesTaxCollected'] + $val['RollSafe'] + $val['Chargebacks'] + $val['ManagementFee'] + $val['SubfranchiseeRoyaltyIncome']);
                     } else {
@@ -237,7 +238,7 @@ class AccessController extends Controller
             for ($i = 0; $i < count($location); $i++) {
                 for ($j = 0; $j < count($month); $j++) {
                     $lastrevenue[] = revenuedata::where('Location', '=', $location[$i]->locationid)->where('Date', $othermonth[$j])->get()->toArray();
-                    $lastcogsdata[] =  Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $othermonth[$j])->get()->toArray();
+                    $lastcogsdata[] = Cogsdata::where('Location', '=', $location[$i]->locationid)->where('Date', $othermonth[$j])->get()->toArray();
                     $lastexpdata[] = DB::table('expense')
                         ->join('expense1', 'expense.id', '=', 'expense1.exp_id')->where('expense.Location', '=', $location[$i]->locationid)
                         ->where('expense.Date', $othermonth[$j])->select('expense.*', 'expense1.*')->get()->toArray();
@@ -246,7 +247,7 @@ class AccessController extends Controller
             foreach ($lastrevenue as $value) {
                 foreach ($value as $val) {
                     if (isset($lastrev[$val['Date']])) {
-                        $lastrev[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] +  $val['RollPro']
+                        $lastrev[$val['Date']] += ($val['RentalIncome'] + $val['CashSales'] + $val['CashSalesNoninventory'] + $val['EarlyPurchaseOption'] + $val['RollPro']
                             + $val['CollectionFeeInHouse'] + $val['ReinstatementFees'] + $val['OtherFeesAlignments'] + $val['OneTimeFees'] + $val['NSFCheckFees'] + $val['OtherMiscellaneousIncome']
                             + $val['SalesTaxCollected'] + $val['RollSafe'] + $val['Chargebacks'] + $val['ManagementFee'] + $val['SubfranchiseeRoyaltyIncome']);
                     } else {
@@ -338,7 +339,7 @@ class AccessController extends Controller
                 $defloc = DB::table('default_loc')->select('location')
                     ->where('userid', Session::get('userloginid'))->get()->toArray();
                 if (!$defloc) {
-                    $loc  = $locpermitted[0]['locationid'];
+                    $loc = $locpermitted[0]['locationid'];
                 } else {
                     $loc = $defloc[0]->location;
                 }
@@ -409,7 +410,7 @@ class AccessController extends Controller
                         $pstdue[$key][$value] = $pastdueacc;
                     }
                 }
-                return view('bonus_calculator', compact('name', 'year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev',  'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'customer_count'));
+                return view('bonus_calculator', compact('name', 'year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev', 'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'customer_count'));
             }
         } elseif (session()->has('userloginid') && session::get('userrole') == 'Sales Employee') {
             $data = Upload::select('file')->get()->toArray();
@@ -432,7 +433,7 @@ class AccessController extends Controller
         $date = $data['date'];
         $loc = $data['location'];
         $customers = Customer::where([['Date', '=', $date], ['Location', '=', $loc]])->get();
-        @$customer_count =  $customers[0]->Customers;
+        @$customer_count = $customers[0]->Customers;
 
         $prevyear = (explode("-", $date));
         $year = $prevyear[1];
@@ -497,7 +498,7 @@ class AccessController extends Controller
                 $pstdue[$key][$value] = $pastdueacc;
             }
         }
-        return view('bonus_calculator', compact('customer_count', 'name', 'year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust',  'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue'));
+        return view('bonus_calculator', compact('customer_count', 'name', 'year', 'prevdate', 'previousyear', 'shwgraph', 'location', 'loc', 'rev', 'date', 'cog', 'exp', 'grossp', 'cal', 'netinc', 'cust', 'prevdate', 'months', 'sumrdata', 'sumcdata', 'sumedata', 'netdata', 'gross', 'prevsumrdata1', 'prevsumcdata1', 'prevgross1', 'prevsumedata1', 'prevnetdata1', 'pstdue'));
     }
 
     public function customer_count(Request $request)
@@ -581,7 +582,7 @@ class AccessController extends Controller
                 $pstdue[$key][$value] = $pastdueacc;
             }
         }
-        return response()->json(['name' => $name, 'year' => $year, 'prevdate' => $prevdate, 'previousyear' => $previousyear, 'shwgraph' => $shwgraph, 'location' => $location, 'loc' => $loc, 'rev' => $rev, 'date' => $date, 'cog' => $cog, 'exp' => $exp, 'grossp' => $grossp, 'cal' => $cal, 'netinc' => $netinc, 'cust' => $cust,  'prevdate' => $prevdate, 'months' => $months, 'sumrdata' => $sumrdata, 'sumcdata' => $sumcdata, 'sumedata' => $sumedata, 'netdata' => $netdata, 'gross' => $gross, 'prevsumrdata1' => $prevsumrdata1, 'prevsumcdata1' => $prevsumcdata1, 'prevgross1' => $prevgross1, 'prevsumedata1' => $prevsumedata1, 'prevnetdata1' => $prevnetdata1, 'pstdue' => $pstdue, 'customer_count' => $customer_count]);
+        return response()->json(['name' => $name, 'year' => $year, 'prevdate' => $prevdate, 'previousyear' => $previousyear, 'shwgraph' => $shwgraph, 'location' => $location, 'loc' => $loc, 'rev' => $rev, 'date' => $date, 'cog' => $cog, 'exp' => $exp, 'grossp' => $grossp, 'cal' => $cal, 'netinc' => $netinc, 'cust' => $cust, 'prevdate' => $prevdate, 'months' => $months, 'sumrdata' => $sumrdata, 'sumcdata' => $sumcdata, 'sumedata' => $sumedata, 'netdata' => $netdata, 'gross' => $gross, 'prevsumrdata1' => $prevsumrdata1, 'prevsumcdata1' => $prevsumcdata1, 'prevgross1' => $prevgross1, 'prevsumedata1' => $prevsumedata1, 'prevnetdata1' => $prevnetdata1, 'pstdue' => $pstdue, 'customer_count' => $customer_count]);
     }
     public function company_access()
     {
@@ -640,7 +641,7 @@ class AccessController extends Controller
             $defloc = DB::table('default_loc')->select('location')
                 ->where('userid', Session::get('userloginid'))->get()->toArray();
             if (!$defloc) {
-                $loc  = $locpermitted[0]['locationid'];
+                $loc = $locpermitted[0]['locationid'];
             } else {
                 $loc = $defloc[0]->location;
             }
@@ -726,7 +727,36 @@ class AccessController extends Controller
                 'date' => $maxMonthYear,
                 'loc' => $loc,
             ];
-            return view('highlight', compact('year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev',  'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'graphdata'));
+            return view('highlight', compact('year', 'previousyear', 'loc', 'location', 'shwgraph', 'prevdate', 'cal', 'sumrdata1', 'sumcdata1', 'sumedata1', 'gross1', 'netdata', 'rev', 'cog', 'exp', 'grossp', 'netinc', 'cust', 'prevsumrdata', 'prevsumcdata', 'prevgross', 'prevsumedata', 'prevnetdata', 'pstdue', 'graphdata'));
         }
+    }
+
+    public function daily_stats()
+    {
+        // Get today's date and define other date ranges
+        $today = Carbon::today();
+        $yesterday = $today->copy()->subDay();
+        $startOfMonth = $today->copy()->startOfMonth();
+        $startOfLastMonth = $today->copy()->subMonth()->startOfMonth();
+        $endOfLastMonth = $today->copy()->subMonth()->endOfMonth();
+        $startOfLastYearSameMonth = $today->copy()->subYear()->startOfMonth();
+        $endOfLastYearSameMonth = $today->copy()->subYear()->endOfMonth();
+
+        // Retrieve data and calculate deliveries for different periods
+        $reports = DB::table('daily_reports')
+            ->select('StoreName', 'AgreementDeliveries', 'SummaryDate')
+            ->get();
+
+        $filteredData = $reports->map(function ($report) use ($yesterday, $startOfMonth, $startOfLastMonth, $endOfLastMonth, $startOfLastYearSameMonth, $endOfLastYearSameMonth) {
+            return [
+                'Location' => $report->StoreName,
+                'YesterdayDeliveries' => $report->SummaryDate == $yesterday->toDateString() ? $report->AgreementDeliveries : 0,
+                'MonthToDateDeliveries' => ($report->SummaryDate >= $startOfMonth->toDateString()) ? $report->AgreementDeliveries : 0,
+                'LastMonthDeliveries' => ($report->SummaryDate >= $startOfLastMonth->toDateString() && $report->SummaryDate <= $endOfLastMonth->toDateString()) ? $report->AgreementDeliveries : 0,
+                'LastYearMonthDeliveries' => ($report->SummaryDate >= $startOfLastYearSameMonth->toDateString() && $report->SummaryDate <= $endOfLastYearSameMonth->toDateString()) ? $report->AgreementDeliveries : 0,
+            ];
+        });
+
+        return view('daily_stats', compact('filteredData'));
     }
 }

@@ -18,7 +18,8 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
+    // 'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => 'file', 
 
     /*
     |--------------------------------------------------------------------------
@@ -59,7 +60,9 @@ return [
     |
     */
 
-    'files' => storage_path('framework/sessions'),
+    // 'files' => storage_path('framework/sessions'),
+    // 'files' => storage_path('../../shared_sessions'),
+    'files' => '/home/a1ozv8k8f7jm/shared_sessions',
 
     /*
     |--------------------------------------------------------------------------
@@ -126,10 +129,11 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+    // 'cookie' => env(
+    //     'SESSION_COOKIE',
+    //     Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+    // ),
+    'cookie' => 'rentalconcepts_session',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +159,8 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    // 'domain' => env('SESSION_DOMAIN'),
+    'domain' => '.rentalconcepts.net',  // Note the leading dot, it's important for sharing the cookie
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +173,8 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    // 'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------

@@ -40,6 +40,12 @@
           <option class="form-control" {{ ($user->role == "Super admin") ? "selected" : "" }}>Super admin</option>
           <option class="form-control" {{ ($user->role == "Manager") ? "selected" : "" }}>Manager</option>
           <option class="form-control" {{ ($user->role == "Director") ? "selected" : "" }}>Director </option>
+<<<<<<< HEAD
+=======
+          <option class="form-control" {{ ($user->role == "Sales Manager") ? "selected" : "" }}>Sales Manager </option>
+          <option class="form-control" {{ ($user->role == "Sales Employee") ? "selected" : "" }}>Sales Employee </option>
+          <option class="form-control" {{ ($user->role == "Accounting Office") ? "selected" : "" }}>Accounting Office </option>
+>>>>>>> 0b37fa62 (New code added)
        </select>
 
 
