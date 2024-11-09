@@ -10,6 +10,7 @@
                 <h1 class="text-2xl font-bold mb-6">Competition Stores</h1>
 
                 <div class="row">
+                    @if (session('role') === 'Director' || session('role') === 'Super admin')
                     <div class="col-6">
                         <!-- Dropdown for Group Selection -->
                         <div class="mb-4">
@@ -23,58 +24,85 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <!-- Table to Display Store Data -->
-                        <table id="storeTable" class="table table-striped table-bordered table-hover">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col" class="text-center">Store Number</th>
-                                    <th scope="col" class="text-center">Customer Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data will be dynamically populated here -->
-                            </tbody>
-                        </table>
+                        @else
+                        <div class="col-12">
+                            @endif
+                            <!-- Table to Display Store Data -->
+                            <table id="storeTable" class="table table-striped table-bordered table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        @if (session('role') !== 'Director' && session('role') !== 'Super admin')
+                                        <th scope="col" class="text-center">Group</th>
+                                        @endif
+                                        <th scope="col" class="text-center">Store Number</th>
+                                        <th scope="col" class="text-center">Customer Count</th>
+                                        <th scope="col" class="text-center">Net Income %</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $item)
+                                    <tr>
+                                        @if (session('role') !== 'Director' && session('role') !== 'Super admin')
+                                        <td class="text-center">{{ $item['Group'] }}</td>
+                                        @endif
+                                        <td class="text-center">{{ $item['Location'] }}</td>
+                                        <td class="text-center">{{ $item['Customers'] }}</td>
+                                        <td class="text-center">{{ $item['NetIncome'] }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $('#groupSelect').on('change', function() {
-            const group = $(this).val();
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $('#groupSelect').on('change', function() {
+                const group = $(this).val();
 
-            if (group) {
-                $.ajax({
-                    url: '{{ route("competition-data.index") }}',
-                    type: 'GET',
-                    data: {
-                        group: group
-                    },
-                    success: function(data) {
-                        // console.log(data);
-                        const tableBody = $('#storeTable tbody');
-                        tableBody.empty();
+                if (group) {
+                    $.ajax({
+                        url: '{{ route("competition-data.index") }}',
+                        type: 'GET',
+                        data: {
+                            group: group
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            // return false;
+                            const tableBody = $('#storeTable tbody');
+                            tableBody.empty();
 
-                        data.forEach(function(store) {
-                            const row = `
+                            if (data.length === 0) {
+                                const noDataRow = `
+                        <tr>
+                            <td class="py-2 px-4 border-b border-gray-200 text-center" colspan="3">No records found</td>
+                        </tr>
+                        `;
+                                tableBody.append(noDataRow);
+                            } else {
+                                data.forEach(function(store) {
+                                    const row = `
                             <tr>
                                 <td class="py-2 px-4 border-b border-gray-200 text-center">${store.Location}</td>
                                 <td class="py-2 px-4 border-b border-gray-200 text-center">${store.Customers}</td>
+                                <td class="py-2 px-4 border-b border-gray-200 text-center">${store.NetIncome}</td>
                             </tr>
-                        `;
-                            tableBody.append(row);
-                        });
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error:', error);
-                        alert('An error occurred: ' + xhr.responseText);
-                    }
-                });
-            }
-        });
-    </script>
+                            `;
+                                    tableBody.append(row);
+                                });
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                            alert('An error occurred: ' + xhr.responseText);
+                        }
+                    });
+                }
+            });
+        </script>
 
 </x-app-layout>

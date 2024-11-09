@@ -10,8 +10,8 @@
                 <form method="POST" action="{{ url('admin/addlocationdata') }}" class="add-location-form" role="form" style="height: 564px; top:50%">
                     @if(session()->has('message'))
                     <div class="alert alert-success text-white"style="
-    font-size: smaller;    background-image: linear-gradient(195deg, #dc3545 0%, rgb(190 55 55));
-">
+                            font-size: smaller;    background-image: linear-gradient(195deg, #dc3545 0%, rgb(190 55 55));
+                        ">
                         {{session()->get('message') }}
                     </div>
                     @endif

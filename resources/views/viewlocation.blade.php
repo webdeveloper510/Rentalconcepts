@@ -25,7 +25,7 @@
             @endif
             <thead>
                 <tr>
-                <th>Location Id</th>
+                    <th>Location Id</th>
                     <th>Location Name</th>
                     <th>Address</th>
                     <th>City</th>
@@ -38,7 +38,7 @@
             <tbody>
                 @foreach($locdata as $loc)
                 <tr>
-                <td>{{$loc->locationid}}</td>
+                    <td>{{$loc->locationid}}</td>
                     <td>{{$loc->location}}</td>
                     <td>{{$loc->address}}</td>
                     <td>{{$loc->city}}</td>

@@ -144,6 +144,7 @@ class FileController extends Controller
             // echo "<pre>";
             // print_r($dataa);
 
+            
             $rev = DB::table('Revenue')->select('*')
                 ->where('Date', $cdate)
                 ->where('Location', $dataa['Location'])
