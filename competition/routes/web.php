@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -20,11 +21,7 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 })->middleware(['autologin']);
 
-Route::middleware(['autologin'])->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
-
+Route::middleware(['autologin'])->group(function () { 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
@@ -56,7 +53,7 @@ Route::middleware(['autologin'])->group(function () {
     Route::post('/stores/update-groups', [StoreController::class, 'updateGroups'])->name('stores.updateGroups');
 });
 
-// ROUTES FOR DASHBOARD
+// ROUTES FOR COMPETITION DASHBOARD
 Route::get('/competition-data', [DashboardController::class, 'competitionStoreData'])->name('competition-data.index');
 
 require __DIR__ . '/auth.php';

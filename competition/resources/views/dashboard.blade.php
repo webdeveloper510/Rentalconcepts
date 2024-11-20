@@ -47,7 +47,7 @@
                                         @endif
                                         <td class="text-center">{{ $item['Location'] }}</td>
                                         <td class="text-center">{{ $item['Customers'] }}</td>
-                                        <td class="text-center">{{ $item['NetIncome'] }}</td>
+                                        <td class="text-center">{{ (int) $item['NetIncome'] }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -85,11 +85,12 @@
                                 tableBody.append(noDataRow);
                             } else {
                                 data.forEach(function(store) {
+                                    const netIncomeRounded = Math.round(store.NetIncome);
                                     const row = `
                             <tr>
                                 <td class="py-2 px-4 border-b border-gray-200 text-center">${store.Location}</td>
                                 <td class="py-2 px-4 border-b border-gray-200 text-center">${store.Customers}</td>
-                                <td class="py-2 px-4 border-b border-gray-200 text-center">${store.NetIncome}</td>
+                                <td class="py-2 px-4 border-b border-gray-200 text-center">${netIncomeRounded}</td>
                             </tr>
                             `;
                                     tableBody.append(row);

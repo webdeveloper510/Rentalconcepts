@@ -19,8 +19,6 @@ class DashboardController extends Controller
     {
         $userId = session()->get('userloginid');
         $userRole = session()->get('role');
-        // echo $userRole;
-        // die;
 
         $data = collect(); // Initialize as an empty collection
 
@@ -329,7 +327,8 @@ class DashboardController extends Controller
             $netIncome = round($grossProfit - $totalExpenses, 0);
 
             // Calculate the net income ratio, avoiding division by zero
-            $totalNetIncome = $revenueSum ? round($netIncome / $revenueSum, 2) : 0;
+            // $totalNetIncome = $revenueSum ? round($netIncome / $revenueSum, precision: 2) : 0;         
+            $totalNetIncome = $revenueSum ? (int) round(($netIncome / $revenueSum) * 100) : 0;
 
             // Store the total for the current location
             $locationSums[$locationId] = [
